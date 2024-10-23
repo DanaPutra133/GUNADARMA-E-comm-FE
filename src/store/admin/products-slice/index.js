@@ -10,7 +10,7 @@ export const addNewProduct = createAsyncThunk(
   "/products/addnewproduct",
   async (formData) => {
     const result = await axios.post(
-      "https://gunadarma-e-comm-be.vercel.app/api/admin/products/add",
+      "http://localhost:5004/api/admin/products/add",
       formData,
       {
         headers: {
@@ -27,7 +27,7 @@ export const fetchAllProducts = createAsyncThunk(
   "/products/fetchAllProducts",
   async () => {
     const result = await axios.get(
-      "https://gunadarma-e-comm-be.vercel.app/api/admin/products/get"
+      "http://localhost:5004/api/admin/products/get"
     );
 
     return result?.data;
@@ -38,7 +38,7 @@ export const editProduct = createAsyncThunk(
   "/products/editProduct",
   async ({ id, formData }) => {
     const result = await axios.put(
-      `https://gunadarma-e-comm-be.vercel.app/api/admin/products/edit/${id}`,
+      `http://localhost:5004/api/admin/products/edit/${id}`,
       formData,
       {
         headers: {
@@ -55,7 +55,7 @@ export const deleteProduct = createAsyncThunk(
   "/products/deleteProduct",
   async (id) => {
     const result = await axios.delete(
-      `https://gunadarma-e-comm-be.vercel.app/api/admin/products/delete/${id}`
+      `http://localhost:5004/api/admin/products/delete/${id}`
     );
 
     return result?.data;
