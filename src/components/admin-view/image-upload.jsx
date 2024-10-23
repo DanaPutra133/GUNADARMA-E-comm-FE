@@ -50,7 +50,7 @@ function ProductImageUpload({
     const data = new FormData();
     data.append("my_file", imageFile);
     const response = await axios.post(
-      "https://gunadarma-e-comm-be.vercel.app/api/admin/products/upload-image",
+      "http://localhost:5004/api/admin/products/upload-image",
       data
     );
     console.log(response, "response");
