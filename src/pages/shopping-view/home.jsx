@@ -37,21 +37,21 @@ import ProductDetailsDialog from "@/components/shopping-view/product-details";
 import { getFeatureImages } from "@/store/common-slice";
 
 const categoriesWithIcon = [
-  { id: "men", label: "Shirt", icon: ShirtIcon },
-  { id: "women", label: "Pants", icon: PiPants },
-  { id: "kids", label: "Shoes", icon: GiRunningShoe },
-  { id: "accessories", label: "Phone", icon: BsPhone },
-  { id: "footwear", label: "Vape", icon: PiCigaretteDuotone },
+  { id: "Shirt", label: "Shirt", icon: ShirtIcon },
+  { id: "Pants", label: "Pants", icon: PiPants },
+  { id: "Shoes", label: "Shoes", icon: GiRunningShoe },
+  { id: "Phone", label: "Phone", icon: BsPhone },
+  { id: "Vape", label: "Vape", icon: PiCigaretteDuotone },
 ];
 
-const brandsWithIcon = [
-  { id: "nike", label: "Nike", icon: Shirt },
-  { id: "adidas", label: "Adidas", icon: WashingMachine },
-  { id: "puma", label: "Puma", icon: ShoppingBasket },
-  { id: "levi", label: "Levi's", icon: Airplay },
-  { id: "zara", label: "Zara", icon: Images },
-  { id: "h&m", label: "H&M", icon: Heater },
-];
+// const brandsWithIcon = [
+//   { id: "nike", label: "Nike", icon: Shirt },
+//   { id: "adidas", label: "Adidas", icon: WashingMachine },
+//   { id: "puma", label: "Puma", icon: ShoppingBasket },
+//   { id: "levi", label: "Levi's", icon: Airplay },
+//   { id: "zara", label: "Zara", icon: Images },
+//   { id: "h&m", label: "H&M", icon: Heater },
+// ];
 function ShoppingHome() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const { productList, productDetails } = useSelector(
@@ -175,7 +175,7 @@ function ShoppingHome() {
             {categoriesWithIcon.map((categoryItem) => (
               <Card
                 onClick={() =>
-                  handleNavigateToListingPage(categoryItem, "category")
+                  handleNavigateToListingPage(categoryItem, "apa")
                 }
                 className="cursor-pointer hover:shadow-lg transition-shadow"
               >
