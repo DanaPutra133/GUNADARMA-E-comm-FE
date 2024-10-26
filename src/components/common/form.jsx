@@ -23,6 +23,7 @@ function CommonForm({
     const value = formData[getControlItem.name] || "";
 
     switch (getControlItem.componentType) {
+      //tipe untuk cek apakah dia berupa input atau select data
       case "input":
         element = (
           <Input
@@ -118,7 +119,7 @@ function CommonForm({
           </div>
         ))}
       </div>
-      <Button disabled={isBtnDisabled} type="submit" className="mt-2 w-full">
+      <Button disabled={isBtnDisabled} type="submit" className="mt-2 text-2xl w-full bg-white text-blue-300 font-bold">
         {buttonText || "Submit"}
       </Button>
     </form>
