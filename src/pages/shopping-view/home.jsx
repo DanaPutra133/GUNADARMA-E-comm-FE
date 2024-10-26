@@ -1,5 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { PiPants } from "react-icons/pi";
+import { GiRunningShoe } from "react-icons/gi";
+import { BsPhone } from "react-icons/bs";
+import { PiCigaretteDuotone } from "react-icons/pi";
+
 // import bannerOne from "../../assets/banner-1.webp";
 // import bannerTwo from "../../assets/banner-2.webp";
 // import bannerThree from "../../assets/banner-3.webp";
@@ -35,9 +39,9 @@ import { getFeatureImages } from "@/store/common-slice";
 const categoriesWithIcon = [
   { id: "men", label: "Shirt", icon: ShirtIcon },
   { id: "women", label: "Pants", icon: PiPants },
-  { id: "kids", label: "Kids", icon: BabyIcon },
-  { id: "accessories", label: "Accessories", icon: WatchIcon },
-  { id: "footwear", label: "Footwear", icon: UmbrellaIcon },
+  { id: "kids", label: "Shoes", icon: GiRunningShoe },
+  { id: "accessories", label: "Phone", icon: BsPhone },
+  { id: "footwear", label: "Vape", icon: PiCigaretteDuotone },
 ];
 
 const brandsWithIcon = [
