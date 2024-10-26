@@ -7,25 +7,28 @@ import {
 import { Fragment } from "react";
 import { useNavigate } from "react-router-dom";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "../ui/sheet";
+import { MdOutlineDashboard } from "react-icons/md";
+import { BsFillBasketFill } from "react-icons/bs";
+import { IoMdList } from "react-icons/io";
 
 const adminSidebarMenuItems = [
   {
     id: "dashboard",
     label: "Dashboard",
     path: "/admin/dashboard",
-    icon: <LayoutDashboard />,
+    icon: <MdOutlineDashboard />
   },
   {
     id: "products",
     label: "Products",
     path: "/admin/products",
-    icon: <ShoppingBasket />,
+    icon: <BsFillBasketFill />,
   },
   {
     id: "orders",
-    label: "Orders",
+    label: "Orders List",
     path: "/admin/orders",
-    icon: <BadgeCheck />,
+    icon: <IoMdList />,
   },
 ];
 
@@ -77,7 +80,7 @@ function AdminSideBar({ open, setOpen }) {
           <h1 className="text-2xl font-extrabold size-20">
           <img src="https://api.betabotz.eu.org/api/tools/get-upload?id=f/ryqio3kv.jpg"/>
           </h1>
-          <span class="text-3xl font-semibold text-gray-800">Shop</span>
+          <span class="text-3xl font-bold text-gray-800">Shop</span>
         </div>
         <MenuItems />
       </aside>
