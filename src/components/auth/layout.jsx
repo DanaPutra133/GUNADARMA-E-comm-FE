@@ -5,8 +5,8 @@ function AuthLayout() {
     <div className="flex min-h-screen w-full">
       <div className="hidden lg:flex items-center justify-center bg-white w-1/2 px-12">
         <div className="max-w-md space-y-6 text-center text-primary-foreground">
-          <h1 className="text-4xl text-black font-extrabold tracking-tight size-450">
-            <img src="https://api.betabotz.eu.org/api/tools/get-upload?id=f/z2uauay9.jpg"></img>
+          <h1 className="text-4xl text-black font-extrabold tracking-tight size-300">
+            <img src="https://api.betabotz.eu.org/api/tools/get-upload?id=f/ryqio3kv.jpg"></img>
           </h1>
         </div>
       </div>
