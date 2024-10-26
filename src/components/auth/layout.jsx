@@ -5,10 +5,8 @@ function AuthLayout() {
     <div className="flex min-h-screen w-full">
       <div className="hidden lg:flex items-center justify-center bg-white w-1/2 px-12">
         <div className="max-w-md space-y-6 text-center text-primary-foreground">
-          //buat ganti bar side logo
-          <h1 className="text-4xl text-black font-extrabold tracking-tight">
-            <img src="https://api.betabotz.eu.org/api/tools/get-upload?id=f/64e3beki.jpg"></img>
-            ganti logo nya
+          <h1 className="text-4xl text-black font-extrabold tracking-tight size-450">
+            <img src="https://api.betabotz.eu.org/api/tools/get-upload?id=f/z2uauay9.jpg"></img>
           </h1>
         </div>
       </div>
