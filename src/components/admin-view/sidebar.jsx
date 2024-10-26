@@ -74,8 +74,10 @@ function AdminSideBar({ open, setOpen }) {
           onClick={() => navigate("/admin/dashboard")}
           className="flex cursor-pointer items-center gap-2"
         >
-          <ChartNoAxesCombined size={30} />
-          <h1 className="text-2xl font-extrabold">Admin Panel</h1>
+          <h1 className="text-2xl font-extrabold size-20">
+          <img src="https://api.betabotz.eu.org/api/tools/get-upload?id=f/ryqio3kv.jpg"/>
+          </h1>
+          <span class="text-3xl font-semibold text-gray-800">Shop</span>
         </div>
         <MenuItems />
       </aside>
