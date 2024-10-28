@@ -16,7 +16,7 @@ const adminSidebarMenuItems = [
     id: "dashboard",
     label: "Dashboard",
     path: "/admin/dashboard",
-    icon: <MdOutlineDashboard />
+    icon: <MdOutlineDashboard />,
   },
   {
     id: "products",
@@ -78,9 +78,9 @@ function AdminSideBar({ open, setOpen }) {
           className="flex cursor-pointer items-center gap-2"
         >
           <h1 className="text-2xl font-extrabold size-20">
-          <img src="https://api.betabotz.eu.org/api/tools/get-upload?id=f/ryqio3kv.jpg"/>
+            <img src="https://api.betabotz.eu.org/api/tools/get-upload?id=f/ryqio3kv.jpg" />
           </h1>
-          <span class="text-3xl font-bold text-gray-800">Shop</span>
+          <span class="text-3xl font-bold text-gray-800">G-SHOP</span>
         </div>
         <MenuItems />
       </aside>

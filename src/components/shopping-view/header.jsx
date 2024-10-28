@@ -139,8 +139,10 @@ function ShoppingHeader() {
     <header className="sticky top-0 z-40 w-full border-b bg-background">
       <div className="flex h-16 items-center justify-between px-4 md:px-6">
         <Link to="/shop/home" className="flex items-center gap-2">
-          <div className="h-10 w-10" ><img src="https://api.betabotz.eu.org/api/tools/get-upload?id=f/ryqio3kv.jpg"/> </div>
-          <span className="font-bold">Shop</span>
+          <div className="h-10 w-10">
+            <img src="https://api.betabotz.eu.org/api/tools/get-upload?id=f/ryqio3kv.jpg" />{" "}
+          </div>
+          <span className="font-bold">G-SHOP</span>
         </Link>
         <Sheet>
           <SheetTrigger asChild>
