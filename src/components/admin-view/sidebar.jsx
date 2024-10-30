@@ -80,7 +80,7 @@ function AdminSideBar({ open, setOpen }) {
           <h1 className="text-2xl font-extrabold size-20">
             <img src="https://api.betabotz.eu.org/api/tools/get-upload?id=f/ryqio3kv.jpg" />
           </h1>
-          <span class="text-3xl font-bold text-gray-800">G-SHOP</span>
+          <span class="text-3xl font-bold text-gray-800">SHOP</span>
         </div>
         <MenuItems />
       </aside>
