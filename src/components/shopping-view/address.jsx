@@ -34,7 +34,7 @@ function Address({ setCurrentSelectedAddress, selectedId }) {
     if (addressList.length >= 3 && currentEditedId === null) {
       setFormData(initialAddressFormData);
       toast({
-        title: "You can add max 3 addresses",
+        title: "cuma bisa menambahkan 3 alamat saja!",
         variant: "destructive",
       });
 
