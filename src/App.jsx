@@ -1,3 +1,5 @@
+//di sini import semua module yang bakal di tampi;in di web
+
 import { Route, Routes } from "react-router-dom";
 import AuthLayout from "./components/auth/layout";
 import AuthLogin from "./pages/auth/login";
@@ -23,6 +25,9 @@ import PaypalReturnPage from "./pages/shopping-view/paypal-return";
 import PaymentSuccessPage from "./pages/shopping-view/payment-success";
 import SearchProducts from "./pages/shopping-view/search";
 
+//sampai sini
+
+//fuction buat deteksi user masuk agar selalu melewati login
 function App() {
   const { user, isAuthenticated, isLoading } = useSelector(
     (state) => state.auth
