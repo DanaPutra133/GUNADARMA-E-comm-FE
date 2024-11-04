@@ -8,6 +8,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
+//inisialisasi user untuk daftar
 const initialState = {
   userName: "",
   email: "",
@@ -42,10 +43,11 @@ function AuthRegister() {
   return (
     <div className="mx-auto w-full max-w-md space-y-6">
       <div className="text-center">
-        <h1 className="text-3xl font-bold tracking-tight text-foreground">
-          Create new account
+        <h1 className="text-3xl font-bold tracking-tight text-foreground text-white">
+          Buat <span className="text-red-500">Akun</span>
         </h1>
-        <p className="mt-2">
+        {/* di matiin sementara kalau di butuhin baru di nyalain buat kondisi user salah masuk */}
+        {/* <p className="mt-2">
           Already have an account
           <Link
             className="font-medium ml-2 text-primary hover:underline"
@@ -53,7 +55,7 @@ function AuthRegister() {
           >
             Login
           </Link>
-        </p>
+        </p> */}
       </div>
       <CommonForm
         formControls={registerFormControls}
@@ -62,7 +64,18 @@ function AuthRegister() {
         setFormData={setFormData}
         onSubmit={onSubmit}
       />
+      <div className="space-y-2 mt-4">
+            <button className="w-full py-2 px-4 bg-blue-600 text-white rounded-lg flex items-center justify-center space-x-2">
+              <i className="fab fa-facebook"></i>
+              <span>Continue with Facebook</span>
+            </button>
+            <button className="w-full py-2 px-4 bg-white text-gray-800 rounded-lg flex items-center justify-center space-x-2 border">
+              <i className="fab fa-google text-red-500"></i>
+              <span>Continue with Google</span>
+            </button>
+          </div>
     </div>
+    
   );
 }
 

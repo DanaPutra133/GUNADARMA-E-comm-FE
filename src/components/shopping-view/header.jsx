@@ -27,6 +27,7 @@ import UserCartWrapper from "./cart-wrapper";
 import { useEffect, useState } from "react";
 import { fetchCartItems } from "@/store/shop/cart-slice";
 import { Label } from "../ui/label";
+import logo from '../../assets/logo/logo.jpg';;
 
 function MenuItems() {
   const navigate = useNavigate();
@@ -145,7 +146,7 @@ function ShoppingHeader() {
       <div className="flex h-16 items-center justify-between px-4 md:px-6">
         <Link to="/shop/home" className="flex items-center gap-2">
           <div className="h-10 w-10">
-            <img src="https://api.betabotz.eu.org/api/tools/get-upload?id=f/ryqio3kv.jpg" />{" "}
+          <img src={logo} alt="logo" />
           </div>
           <span className="font-bold">SHOP</span>
         </Link>

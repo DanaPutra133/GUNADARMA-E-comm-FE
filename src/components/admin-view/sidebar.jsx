@@ -10,7 +10,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle } from "../ui/sheet";
 import { MdOutlineDashboard } from "react-icons/md";
 import { BsFillBasketFill } from "react-icons/bs";
 import { IoMdList } from "react-icons/io";
-
+import logo from '../../assets/logo/logo.jpg';
 const adminSidebarMenuItems = [
   {
     id: "dashboard",
@@ -78,7 +78,7 @@ function AdminSideBar({ open, setOpen }) {
           className="flex cursor-pointer items-center gap-2"
         >
           <h1 className="text-2xl font-extrabold size-20">
-            <img src="https://api.betabotz.eu.org/api/tools/get-upload?id=f/ryqio3kv.jpg" />
+            <img src={logo} alt="logo" />
           </h1>
           <span class="text-3xl font-bold text-gray-800">SHOP</span>
         </div>

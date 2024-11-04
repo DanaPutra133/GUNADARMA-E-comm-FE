@@ -1,22 +1,24 @@
+
+// config cek buat bagian login sama register
 export const registerFormControls = [
   {
     name: "userName",
     label: "User Name",
-    placeholder: "Enter your user name",
+    placeholder: "Masukan username kamu",
     componentType: "input",
     type: "text",
   },
   {
     name: "email",
     label: "Email",
-    placeholder: "Enter your email",
+    placeholder: "Masukan email kamu",
     componentType: "input",
     type: "email",
   },
   {
     name: "password",
     label: "Password",
-    placeholder: "Enter your password",
+    placeholder: "Masukan password kamu",
     componentType: "input",
     type: "password",
   },
@@ -26,19 +28,21 @@ export const loginFormControls = [
   {
     name: "email",
     label: "Email",
-    placeholder: "Enter your email",
+    placeholder: "Masukan email kamu",
     componentType: "input",
     type: "email",
   },
   {
     name: "password",
     label: "Password",
-    placeholder: "Enter your password",
+    placeholder: "Masukan password kamu",
     componentType: "input",
     type: "password",
   },
 ];
 
+
+//bagian p
 export const addProductFormElements = [
   {
     label: "Title",
