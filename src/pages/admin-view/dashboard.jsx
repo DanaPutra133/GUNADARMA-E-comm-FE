@@ -42,7 +42,7 @@ function AdminDashboard() {
         // isEditMode={currentEditedId !== null}
       />
       <Button onClick={handleUploadFeatureImage} className="mt-5 w-full">
-        Upload
+        Unggah
       </Button>
       <div className="flex flex-col gap-4 mt-5">
         {featureImageList && featureImageList.length > 0

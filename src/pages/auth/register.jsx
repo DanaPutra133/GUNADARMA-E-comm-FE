@@ -7,6 +7,8 @@ import { registerUser } from "@/store/auth-slice";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { FaFacebook } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 
 //inisialisasi user untuk daftar
 const initialState = {
@@ -66,10 +68,12 @@ function AuthRegister() {
       />
       <div className="space-y-2 mt-4">
             <button className="w-full py-2 px-4 bg-blue-600 text-white rounded-lg flex items-center justify-center space-x-2">
+            <i className="md:size-auto"><FaFacebook /></i>
               <i className="fab fa-facebook"></i>
               <span>Continue with Facebook</span>
             </button>
             <button className="w-full py-2 px-4 bg-white text-gray-800 rounded-lg flex items-center justify-center space-x-2 border">
+            <i className="md:size-auto"><FcGoogle /></i>
               <i className="fab fa-google text-red-500"></i>
               <span>Continue with Google</span>
             </button>
