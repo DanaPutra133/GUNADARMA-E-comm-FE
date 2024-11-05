@@ -189,7 +189,7 @@ function ShoppingHome() {
         </div>
       </section>
 
-`dihapus ngilangin atribut category by brand`
+{/* dihapus ngilangin atribut category by brand */}
       {/* <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8">Shop by Brand</h2>
