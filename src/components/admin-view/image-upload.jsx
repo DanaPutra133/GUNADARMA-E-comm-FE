@@ -65,6 +65,7 @@ function ProductImageUpload({
     if (imageFile !== null) uploadImageToCloudinary();
   }, [imageFile]);
 
+//Buat mengunggah gambar
   return (
     <div
       className={`w-full  mt-4 ${isCustomStyling ? "" : "max-w-md mx-auto"}`}
@@ -92,6 +93,7 @@ function ProductImageUpload({
               isEditMode ? "cursor-not-allowed" : ""
             } flex flex-col items-center justify-center h-32 cursor-pointer`}
           >
+          {/* Buat menaruh gambar */}
             <UploadCloudIcon className="w-10 h-10 text-muted-foreground mb-2" />
             <span>Geser & taruh atau klik untuk unggah gambar</span>
           </Label>
