@@ -41,16 +41,17 @@ function AdminOrdersView() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>All Orders</CardTitle>
+        {/* untuk melihat status pesanan */}
+        <CardTitle>Semua Pesanan</CardTitle>
       </CardHeader>
       <CardContent>
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Order ID</TableHead>
-              <TableHead>Order Date</TableHead>
-              <TableHead>Order Status</TableHead>
-              <TableHead>Order Price</TableHead>
+              <TableHead>ID Pesanan</TableHead>
+              <TableHead>Tanggal Pesanan</TableHead>
+              <TableHead>Status Pesanan</TableHead>
+              <TableHead>Harga Pesanan</TableHead>
               <TableHead>
                 <span className="sr-only">Details</span>
               </TableHead>

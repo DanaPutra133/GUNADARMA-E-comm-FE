@@ -13,6 +13,7 @@ import { IoMdList } from "react-icons/io";
 import logo from '../../assets/logo/logo.jpg';
 const adminSidebarMenuItems = [
   {
+    // tampilan panel cuy 
     id: "dashboard",
     label: "Dashboard",
     path: "/admin/dashboard",
@@ -20,13 +21,13 @@ const adminSidebarMenuItems = [
   },
   {
     id: "products",
-    label: "Products",
+    label: "Produk",
     path: "/admin/products",
     icon: <BsFillBasketFill />,
   },
   {
     id: "orders",
-    label: "Orders List",
+    label: "Daftar Pesanan",
     path: "/admin/orders",
     icon: <IoMdList />,
   },
