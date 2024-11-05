@@ -106,7 +106,8 @@ function AdminProducts() {
     <Fragment>
       <div className="mb-5 w-full flex justify-end">
         <Button onClick={() => setOpenCreateProductsDialog(true)}>
-          Add New Product
+          {/* Untuk menambahkan produk */}
+          Tambahkan Produk
         </Button>
       </div>
       <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-4">
@@ -133,7 +134,8 @@ function AdminProducts() {
         <SheetContent side="right" className="overflow-auto">
           <SheetHeader>
             <SheetTitle>
-              {currentEditedId !== null ? "Edit Product" : "Add New Product"}
+              {/* merubah produk */}
+              {currentEditedId !== null ? "Ubah Produk" : "Tambahkan Produk"}
             </SheetTitle>
           </SheetHeader>
           <ProductImageUpload
@@ -150,7 +152,7 @@ function AdminProducts() {
               onSubmit={onSubmit}
               formData={formData}
               setFormData={setFormData}
-              buttonText={currentEditedId !== null ? "Edit" : "Add"}
+              buttonText={currentEditedId !== null ? "Ubah" : "Tambahkan"}
               formControls={addProductFormElements}
               isBtnDisabled={!isFormValid()}
             />
