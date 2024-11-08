@@ -8,12 +8,17 @@ function AdminDashboard() {
   const [imageFile, setImageFile] = useState(null);
   const [uploadedImageUrl, setUploadedImageUrl] = useState("");
   const [imageLoadingState, setImageLoadingState] = useState(false);
+  const [warningMessage, setWarningMessage] = useState("");
   const dispatch = useDispatch();
   const { featureImageList } = useSelector((state) => state.commonFeature);
-
-  console.log(uploadedImageUrl, "uploadedImageUrl");
-
+//peringatan jika tidak ada gambar
   function handleUploadFeatureImage() {
+    if (!uploadedImageUrl) {
+      setWarningMessage("Harus ada gambar yang diunggah!"); // Tampilkan peringatan jika tidak ada gambar di imageupload
+      return;
+    }
+    //OWKOWKOKWO DI RESET
+    setWarningMessage(""); // Reset peringatan jika ada gambar
     dispatch(addFeatureImage(uploadedImageUrl)).then((data) => {
       if (data?.payload?.success) {
         dispatch(getFeatureImages());
@@ -27,8 +32,6 @@ function AdminDashboard() {
     dispatch(getFeatureImages());
   }, [dispatch]);
 
-  console.log(featureImageList, "featureImageList");
-
   return (
     <div>
       <ProductImageUpload
@@ -39,18 +42,23 @@ function AdminDashboard() {
         setImageLoadingState={setImageLoadingState}
         imageLoadingState={imageLoadingState}
         isCustomStyling={true}
-        // isEditMode={currentEditedId !== null}
       />
+      {/* di sini buat alert nya */}
+      {warningMessage && (
+        <p className="text-red-500 mt-2 text-sm">{warningMessage}</p>
+      )}
+      {/* button unggah nya */}
       <Button onClick={handleUploadFeatureImage} className="mt-5 w-full">
         Unggah
       </Button>
       <div className="flex flex-col gap-4 mt-5">
         {featureImageList && featureImageList.length > 0
-          ? featureImageList.map((featureImgItem) => (
-              <div className="relative">
+          ? featureImageList.map((featureImgItem, index) => (
+              <div key={index} className="relative">
                 <img
                   src={featureImgItem.image}
                   className="w-full h-[300px] object-cover rounded-t-lg"
+                  alt="Feature Image"
                 />
               </div>
             ))
