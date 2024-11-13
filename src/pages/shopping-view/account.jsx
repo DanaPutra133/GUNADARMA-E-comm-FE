@@ -21,9 +21,9 @@ function ShoppingAccount() {
         <div className="flex flex-col rounded-lg border bg-background p-6 shadow-sm">
           <Tabs defaultValue="orders">
             <TabsList>
-              {/* alamat dari order dan isi order */}
-              <TabsTrigger value="orders">Orders</TabsTrigger>
-              <TabsTrigger value="address">Address</TabsTrigger>
+              {/* alamat dari pesanan dan isi pesanan */}
+              <TabsTrigger value="orders">Pesanan</TabsTrigger>
+              <TabsTrigger value="address">Alamat</TabsTrigger>
             </TabsList>
             <TabsContent value="orders">
               <ShoppingOrders />

@@ -75,7 +75,7 @@ function AdminProducts() {
             setImageFile(null);
             setFormData(initialFormData);
             toast({
-              title: "Product add successfully",
+              title: "Produk Berhasil Ditambahkan",
             });
           }
         });

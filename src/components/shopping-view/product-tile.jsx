@@ -19,15 +19,15 @@ function ShoppingProductTile({
           />
           {product?.totalStock === 0 ? (
             <Badge className="absolute top-2 left-2 bg-red-500 hover:bg-red-600">
-              Out Of Stock
+              Stok Habis
             </Badge>
           ) : product?.totalStock < 10 ? (
             <Badge className="absolute top-2 left-2 bg-red-500 hover:bg-red-600">
-              {`Only ${product?.totalStock} items left`}
+              {`Hanya ${product?.totalStock} produk tersisa`}
             </Badge>
           ) : product?.salePrice > 0 ? (
             <Badge className="absolute top-2 left-2 bg-red-500 hover:bg-red-600">
-              Sale
+              Obral
             </Badge>
           ) : null}
         </div>
@@ -37,9 +37,11 @@ function ShoppingProductTile({
             <span className="text-[16px] text-muted-foreground">
               {categoryOptionsMap[product?.category]}
             </span>
+            {/* melihat produk fitur */}
+            {/*  
             <span className="text-[16px] text-muted-foreground">
               {brandOptionsMap[product?.brand]}
-            </span>
+            </span> */}
           </div>
           <div className="flex justify-between items-center mb-2">
             <span
@@ -47,11 +49,11 @@ function ShoppingProductTile({
                 product?.salePrice > 0 ? "line-through" : ""
               } text-lg font-semibold text-primary`}
             >
-              ${product?.price}
+              Rp{product?.price}
             </span>
             {product?.salePrice > 0 ? (
               <span className="text-lg font-semibold text-primary">
-                ${product?.salePrice}
+                Rp{product?.salePrice}
               </span>
             ) : null}
           </div>
@@ -59,15 +61,16 @@ function ShoppingProductTile({
       </div>
       <CardFooter>
         {product?.totalStock === 0 ? (
+          // untuk menambahkan ke keranjang dari produk fitur
           <Button className="w-full opacity-60 cursor-not-allowed">
-            Out Of Stock
+            Stok Habis
           </Button>
         ) : (
           <Button
             onClick={() => handleAddtoCart(product?._id, product?.totalStock)}
             className="w-full"
           >
-            Add to cart
+            Tambahkan Keranjang
           </Button>
         )}
       </CardFooter>
