@@ -25,7 +25,9 @@ function ProductImageUpload({
     const selectedFile = event.target.files?.[0];
     console.log(selectedFile);
 
-    if (selectedFile) setImageFile(selectedFile);
+    if (selectedFile) 
+    setImageFile(selectedFile);
+    setWarningMessage(""); // Reset peringatan jika gambar dipilih
   }
 
   function handleDragOver(event) {
@@ -35,17 +37,24 @@ function ProductImageUpload({
   function handleDrop(event) {
     event.preventDefault();
     const droppedFile = event.dataTransfer.files?.[0];
-    if (droppedFile) setImageFile(droppedFile);
+    if (droppedFile) 
+    setImageFile(droppedFile);
+    setWarningMessage(""); // Reset peringatan jika gambar di-drop
   }
 
   function handleRemoveImage() {
     setImageFile(null);
+    setWarningMessage(""); // Reset peringatan jika gambar dihapus
     if (inputRef.current) {
       inputRef.current.value = "";
     }
   }
 
   async function uploadImageToCloudinary() {
+    if (!imageFile) {
+      setWarningMessage("Harus ada gambar!"); // Tampilkan peringatan
+      return;
+    }
     setImageLoadingState(true);
     const data = new FormData();
     data.append("my_file", imageFile);
@@ -86,6 +95,7 @@ function ProductImageUpload({
           onChange={handleImageFileChange}
           disabled={isEditMode}
         />
+        
         {!imageFile ? (
           <Label
             htmlFor="image-upload"
@@ -95,7 +105,7 @@ function ProductImageUpload({
           >
           {/* Buat menaruh gambar */}
             <UploadCloudIcon className="w-10 h-10 text-muted-foreground mb-2" />
-            <span>Geser & taruh atau klik untuk unggah gambar</span>
+            <span>Geser & taruh atau klik untuk unggah gambar product kamu</span>
           </Label>
         ) : imageLoadingState ? (
           <Skeleton className="h-10 bg-gray-100" />

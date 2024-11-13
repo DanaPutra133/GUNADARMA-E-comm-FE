@@ -12,5 +12,6 @@ function ShoppingLayout() {
     </div>
   );
 }
+//sedikit tambahan
 
 export default ShoppingLayout;
