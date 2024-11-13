@@ -11,6 +11,7 @@ import { MdOutlineDashboard } from "react-icons/md";
 import { BsFillBasketFill } from "react-icons/bs";
 import { IoMdList } from "react-icons/io";
 import logo from '../../assets/logo/logo.jpg';
+import { RiAdminFill } from "react-icons/ri";
 const adminSidebarMenuItems = [
   {
     id: "dashboard",
@@ -57,6 +58,7 @@ function MenuItems({ setOpen }) {
 function AdminSideBar({ open, setOpen }) {
   const navigate = useNavigate();
 
+  // side bar function control
   return (
     <Fragment>
       <Sheet open={open} onOpenChange={setOpen}>
@@ -64,8 +66,9 @@ function AdminSideBar({ open, setOpen }) {
           <div className="flex flex-col h-full">
             <SheetHeader className="border-b">
               <SheetTitle className="flex gap-2 mt-5 mb-5">
-                <ChartNoAxesCombined size={30} />
-                <h1 className="text-2xl font-extrabold">Admin Panel</h1>
+                {/* <ChartNoAxesCombined size={30} /> */}
+                <RiAdminFill size={30} />
+                <h1 className="text-2xl font-extrabold">Admin panel</h1>
               </SheetTitle>
             </SheetHeader>
             <MenuItems setOpen={setOpen} />
