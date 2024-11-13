@@ -49,12 +49,12 @@ function AdminDashboard() {
       )}
       {/* button unggah nya */}
       <Button onClick={handleUploadFeatureImage} className="mt-5 w-full">
-        Unggah
+        Unggah foto iklan
       </Button>
-      <div className="flex flex-col gap-4 mt-5">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {featureImageList && featureImageList.length > 0
           ? featureImageList.map((featureImgItem, index) => (
-              <div key={index} className="relative">
+              <div key={index} className="h-auto max-w-full rounded-lg">
                 <img
                   src={featureImgItem.image}
                   className="w-full h-[300px] object-cover rounded-t-lg"

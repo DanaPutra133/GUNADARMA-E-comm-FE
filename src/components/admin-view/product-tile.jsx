@@ -6,7 +6,7 @@ function AdminProductTile({
   setFormData,
   setOpenCreateProductsDialog,
   setCurrentEditedId,
-  handleDelete,
+  handleDelete, 
 }) {
   return (
     <Card className="w-full max-w-sm mx-auto">
@@ -26,10 +26,10 @@ function AdminProductTile({
                 product?.salePrice > 0 ? "line-through" : ""
               } text-lg font-semibold text-primary`}
             >
-              ${product?.price}
+              Rp{product?.price}
             </span>
             {product?.salePrice > 0 ? (
-              <span className="text-lg font-bold">${product?.salePrice}</span>
+              <span className="text-lg font-bold">Rp{product?.salePrice}</span>
             ) : null}
           </div>
         </CardContent>
@@ -41,9 +41,10 @@ function AdminProductTile({
               setFormData(product);
             }}
           >
-            Edit
+           {/* Untuk mengubah dan menghapus produk pada admin */}
+            Ubah
           </Button>
-          <Button onClick={() => handleDelete(product?._id)}>Delete</Button>
+          <Button onClick={() => handleDelete(product?._id)}>Hapus</Button>
         </CardFooter>
       </div>
     </Card>
