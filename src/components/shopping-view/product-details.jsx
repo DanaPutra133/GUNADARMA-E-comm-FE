@@ -25,7 +25,6 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
 
   function handleRatingChange(getRating) {
     console.log(getRating, "getRating");
-
     setRating(getRating);
   }
 
@@ -40,10 +39,9 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
         const getQuantity = getCartItems[indexOfCurrentItem].quantity;
         if (getQuantity + 1 > getTotalStock) {
           toast({
-            title: `Only ${getQuantity} quantity can be added for this item`,
+            title: `hanya ${getQuantity} max jumlah barnag yang bisa di tambahkan!`,
             variant: "destructive",
           });
-
           return;
         }
       }
@@ -58,7 +56,7 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
       if (data?.payload?.success) {
         dispatch(fetchCartItems(user?.id));
         toast({
-          title: "Product is added to cart",
+          title: "Produk berhasil di tambahkan ke keranjang",
         });
       }
     });
@@ -72,6 +70,14 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
   }
 
   function handleAddReview() {
+    if (!user) {
+      toast({
+        title: "kamu harus login!",
+        variant: "destructive",
+      });
+      return;
+    }
+
     dispatch(
       addReview({
         productId: productDetails?._id,
@@ -81,12 +87,18 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
         reviewValue: rating,
       })
     ).then((data) => {
-      if (data.payload.success) {
+      console.log("response untuk cek review masuk:", data); // Debugging
+      if (data.payload?.success) {
         setRating(0);
         setReviewMsg("");
         dispatch(getReviews(productDetails?._id));
         toast({
-          title: "Review added successfully!",
+          title: "review berhail di tambahkan!",
+        });
+      } else {
+        toast({
+          title: "GAGAL! max mengirim review 1 kali",
+          variant: "destructive",
         });
       }
     });
@@ -95,8 +107,6 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
   useEffect(() => {
     if (productDetails !== null) dispatch(getReviews(productDetails?._id));
   }, [productDetails]);
-
-  console.log(reviews, "reviews");
 
   const averageReview =
     reviews && reviews.length > 0
@@ -169,8 +179,8 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
             <h2 className="text-xl font-bold mb-4">Reviews</h2>
             <div className="grid gap-6">
               {reviews && reviews.length > 0 ? (
-                reviews.map((reviewItem) => (
-                  <div className="flex gap-4">
+                reviews.map((reviewItem, index) => (
+                  <div key={index} className="flex gap-4">
                     <Avatar className="w-10 h-10 border">
                       <AvatarFallback>
                         {reviewItem?.userName[0].toUpperCase()}
@@ -194,7 +204,7 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
               )}
             </div>
             <div className="mt-10 flex-col flex gap-2">
-              <Label>Write a review</Label>
+              <Label>Write your review</Label>
               <div className="flex gap-1">
                 <StarRatingComponent
                   rating={rating}
@@ -205,7 +215,7 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
                 name="reviewMsg"
                 value={reviewMsg}
                 onChange={(event) => setReviewMsg(event.target.value)}
-                placeholder="Write a review..."
+                placeholder="Type your review here"
               />
               <Button
                 onClick={handleAddReview}
