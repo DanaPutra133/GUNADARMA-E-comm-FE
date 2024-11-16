@@ -1,4 +1,3 @@
-
 // config cek buat bagian login sama register
 export const registerFormControls = [
   {
@@ -41,7 +40,6 @@ export const loginFormControls = [
   },
 ];
 
-
 //bagian p
 export const addProductFormElements = [
   {
@@ -62,26 +60,26 @@ export const addProductFormElements = [
     name: "category",
     componentType: "select",
     options: [
-      { id: "men", label: "Men" },
-      { id: "women", label: "Women" },
-      { id: "kids", label: "Kids" },
-      { id: "accessories", label: "Accessories" },
-      { id: "footwear", label: "Footwear" },
+      { id: "Shirt", label: "Shirt" },
+      { id: "Pants", label: "Pants" },
+      { id: "Shoes", label: "Shoes" },
+      { id: "phone", label: "phone" },
+      { id: "Vape", label: "Vape" },
     ],
   },
-  {
-    label: "Brand",
-    name: "brand",
-    componentType: "select",
-    options: [
-      { id: "nike", label: "Nike" },
-      { id: "adidas", label: "Adidas" },
-      { id: "puma", label: "Puma" },
-      { id: "levi", label: "Levi's" },
-      { id: "zara", label: "Zara" },
-      { id: "h&m", label: "H&M" },
-    ],
-  },
+  // {
+  //   // label: "Brand",
+  //   name: "brand",
+  //   componentType: "select",
+  //   options: [
+  //     { id: "nike", label: "Nike" },
+  //     { id: "adidas", label: "Adidas" },
+  //     { id: "puma", label: "Puma" },
+  //     { id: "levi", label: "Levi's" },
+  //     { id: "zara", label: "Zara" },
+  //     { id: "h&m", label: "H&M" },
+  //   ],
+  // },
   {
     label: "harga",
     name: "price",
@@ -117,28 +115,28 @@ export const shoppingViewHeaderMenuItems = [
     path: "/shop/listing",
   },
   {
-    id: "men",
-    label: "Men",
+    id: "Shirt",
+    label: "Shirt",
     path: "/shop/listing",
   },
   {
-    id: "women",
-    label: "Women",
+    id: "Pants",
+    label: "Pants",
     path: "/shop/listing",
   },
   {
-    id: "kids",
-    label: "Kids",
+    id: "Shoes",
+    label: "Shoes",
     path: "/shop/listing",
   },
   {
-    id: "footwear",
-    label: "Footwear",
+    id: "phone",
+    label: "phone",
     path: "/shop/listing",
   },
   {
-    id: "accessories",
-    label: "Accessories",
+    id: "Vape",
+    label: "Vape",
     path: "/shop/listing",
   },
   {
@@ -149,11 +147,11 @@ export const shoppingViewHeaderMenuItems = [
 ];
 
 export const categoryOptionsMap = {
-  men: "Men",
-  women: "Women",
-  kids: "Kids",
-  accessories: "Accessories",
-  footwear: "Footwear",
+  Shirt: "Shirt",
+  Pants: "Pants",
+  Shoes: "Shoes",
+  phone: "phone",
+  Vape: "Vape",
 };
 
 export const brandOptionsMap = {
@@ -167,11 +165,11 @@ export const brandOptionsMap = {
 
 export const filterOptions = {
   category: [
-    { id: "men", label: "Men" },
-    { id: "women", label: "Women" },
-    { id: "kids", label: "Kids" },
-    { id: "accessories", label: "Accessories" },
-    { id: "footwear", label: "Footwear" },
+    { id: "Shirt", label: "Shirt" },
+    { id: "Pants", label: "Pants" },
+    { id: "Shoes", label: "Shoes" },
+    { id: "phone", label: "phone" },
+    { id: "Vape", label: "Vape" },
   ],
   // brand: [
   //   { id: "nike", label: "Nike" },
