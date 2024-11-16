@@ -83,7 +83,7 @@ export const addProductFormElements = [
     ],
   },
   {
-    label: "Price",
+    label: "harga",
     name: "price",
     componentType: "input",
     type: "number",
