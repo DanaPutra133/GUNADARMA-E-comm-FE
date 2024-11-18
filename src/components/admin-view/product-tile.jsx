@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button } from "../ui/button";
 import { Card, CardContent, CardFooter } from "../ui/card";
 
@@ -6,8 +7,10 @@ function AdminProductTile({
   setFormData,
   setOpenCreateProductsDialog,
   setCurrentEditedId,
-  handleDelete, 
+  handleDelete,
 }) {
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+
   return (
     <Card className="w-full max-w-sm mx-auto">
       <div>
@@ -41,15 +44,55 @@ function AdminProductTile({
               setFormData(product);
             }}
           >
-           {/* Untuk mengubah dan menghapus produk pada admin */}
             Ubah
           </Button>
-          <Button onClick={() => handleDelete(product?._id)}>Hapus</Button>
+          <Button onClick={() => setShowDeleteDialog(true)}>Hapus</Button>
         </CardFooter>
       </div>
+
+      {/* Dialog konfirmasi hapus */}
+      {showDeleteDialog && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          {/* Background overlay */}
+          <div
+            className="absolute inset-0 bg-black bg-opacity-50"
+            onClick={() => setShowDeleteDialog(false)}
+          ></div>
+
+          {/* Pop-up box */}
+          <div
+            className="relative bg-white rounded-lg shadow-lg p-6 w-[90%] max-w-sm transform transition-transform duration-300 scale-95 animate-slide-up"
+          >
+            <h2 className="text-lg font-bold text-gray-800">
+              Konfirmasi Hapus Produk
+            </h2>
+            <p className="mt-2 text-gray-600">
+              Produk yang sudah di hapus tidak dapat di kembalikan.
+            </p>
+            <div className="mt-4 flex justify-end gap-3">
+              {/* Tombol Batalkan */}
+              <Button
+                variant="secondary"
+                onClick={() => setShowDeleteDialog(false)}
+              >
+                Batalkan
+              </Button>
+              {/* Tombol Hapus */}
+              <Button
+                variant="danger"
+                onClick={() => {
+                  handleDelete(product?._id);
+                  setShowDeleteDialog(false);
+                }}
+              >
+                Hapus
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
     </Card>
   );
 }
 
 export default AdminProductTile;
-
