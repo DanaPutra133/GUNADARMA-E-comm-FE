@@ -48,7 +48,7 @@ function AuthLogin() {
     <div className="">
     <CommonForm
   formControls={loginFormControls}
-  buttonText={"LOGIN"}
+  buttonText={"MASUK"}
   formData={formData}
   setFormData={setFormData}
   onSubmit={onSubmit}
@@ -69,13 +69,13 @@ function AuthLogin() {
              {/* //Buat mengambil logo bro */}
               <i className="md:size-auto"><FaFacebook /></i>
               <i className="fab fa-facebook"></i>
-              <span className="body-flex">Continue with Facebook</span>
+              <span className="body-flex">Masuk dengan Facebook</span>
             </button>
             <button className="w-full py-2 px-4 bg-white text-gray-800 rounded-lg flex items-center justify-center space-x-2 border">
             {/* //Sama aja buat mengambil logo  */}
             <i className="md:size-auto"><FcGoogle /></i>
               <i className="fab fa-google text-red-500"></i>
-              <span>Continue with Google</span>
+              <span>Masuk dengan Google</span>
             </button>
           </div>
     </div>
