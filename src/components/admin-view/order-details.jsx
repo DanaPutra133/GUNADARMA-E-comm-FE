@@ -47,11 +47,11 @@ function AdminOrderDetailsView({ orderDetails }) {
       <div className="grid gap-6">
         <div className="grid gap-2">
           <div className="flex mt-6 items-center justify-between">
-            <p className="font-medium">No Pesanan</p>
+            <p className="font-medium">Order ID</p>
             <Label>{orderDetails?._id}</Label>
           </div>
           <div className="flex mt-2 items-center justify-between">
-            <p className="font-medium">Tanggal Pesanan</p>
+            <p className="font-medium">Order Date</p>
             <Label>{orderDetails?.orderDate.split("T")[0]}</Label>
           </div>
           <div className="flex mt-2 items-center justify-between">
