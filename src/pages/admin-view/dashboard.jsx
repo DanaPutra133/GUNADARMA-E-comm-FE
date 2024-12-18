@@ -14,7 +14,7 @@ function AdminDashboard() {
 //peringatan jika tidak ada gambar
   function handleUploadFeatureImage() {
     if (!uploadedImageUrl) {
-      setWarningMessage("Harus ada gambar yang diunggah!"); // Tampilkan peringatan jika tidak ada gambar di imageupload
+      setWarningMessage("Harus ada gambar yang akan di upload!"); // Tampilkan peringatan jika tidak ada gambar di imageupload
       return;
     }
     //OWKOWKOKWO DI RESET
