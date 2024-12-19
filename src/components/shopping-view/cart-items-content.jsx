@@ -31,7 +31,7 @@ function UserCartItemsContent({ cartItem }) {
           const getQuantity = getCartItems[indexOfCurrentCartItem].quantity;
           if (getQuantity + 1 > getTotalStock) {
             toast({
-              title: `Only ${getQuantity} quantity can be added for this item`,
+              title: `hanya ada ${getQuantity} barang tersisa`,
               variant: "destructive",
             });
 
