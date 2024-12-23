@@ -42,18 +42,18 @@ function ShoppingOrders() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Order History</CardTitle>
+        <CardTitle>Riwayat Pesanan</CardTitle>
       </CardHeader>
       <CardContent>
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Order ID</TableHead>
-              <TableHead>Order Date</TableHead>
-              <TableHead>Order Status</TableHead>
-              <TableHead>Order Price</TableHead>
+              <TableHead>ID Pesanan</TableHead>
+              <TableHead>Tanggal Pesanan</TableHead>
+              <TableHead>Status Pesanan</TableHead>
+              <TableHead>Harga Pesanan</TableHead>
               <TableHead>
-                <span className="sr-only">Details</span>
+                <span className="sr-only">Detail</span>
               </TableHead>
             </TableRow>
           </TableHeader>

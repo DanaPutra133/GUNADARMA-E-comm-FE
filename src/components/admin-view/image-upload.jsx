@@ -27,7 +27,7 @@ function ProductImageUpload({
 
     if (selectedFile) 
     setImageFile(selectedFile);
-    setWarningMessage(""); // Reset peringatan jika gambar dipilih
+    setWarningMessage(""); // peringatan akan di reset saat gambar di pilih
   }
 
   function handleDragOver(event) {
@@ -39,7 +39,7 @@ function ProductImageUpload({
     const droppedFile = event.dataTransfer.files?.[0];
     if (droppedFile) 
     setImageFile(droppedFile);
-    setWarningMessage(""); // Reset peringatan jika gambar di-drop
+    setWarningMessage(""); // peringatan akan di reset saat gambar di drop kekotak
   }
 
   function handleRemoveImage() {

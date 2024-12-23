@@ -62,7 +62,7 @@ function AuthRegister() {
       </div>
       <CommonForm
         formControls={registerFormControls}
-        buttonText={"Sign Up"}
+        buttonText={"Daftar"}
         formData={formData}
         setFormData={setFormData}
         onSubmit={onSubmit}
@@ -72,12 +72,12 @@ function AuthRegister() {
            {/* //sama ae bang udah */}
             <i className="md:size-auto"><FaFacebook /></i>
               <i className="fab fa-facebook"></i>
-              <span>Continue with Facebook</span>
+              <span>Masuk dengan Facebook</span>
             </button>
             <button className="w-full py-2 px-4 bg-white text-gray-800 rounded-lg flex items-center justify-center space-x-2 border">
             <i className="md:size-auto"><FcGoogle /></i>
               <i className="fab fa-google text-red-500"></i>
-              <span>Continue with Google</span>
+              <span>Masuk dengan Google</span>
             </button>
           </div>
     </div>

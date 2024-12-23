@@ -54,7 +54,7 @@ function Address({ setCurrentSelectedAddress, selectedId }) {
             setCurrentEditedId(null);
             setFormData(initialAddressFormData);
             toast({
-              title: "Address updated successfully",
+              title: "alamat berhasil di ubah!",
             });
           }
         })
@@ -68,7 +68,7 @@ function Address({ setCurrentSelectedAddress, selectedId }) {
             dispatch(fetchAllAddresses(user?.id));
             setFormData(initialAddressFormData);
             toast({
-              title: "Address added successfully",
+              title: "alamat berhasil di tambah!",
             });
           }
         });
@@ -81,7 +81,7 @@ function Address({ setCurrentSelectedAddress, selectedId }) {
       if (data?.payload?.success) {
         dispatch(fetchAllAddresses(user?.id));
         toast({
-          title: "Address deleted successfully",
+          title: "alamat berhasil di hapus!",
         });
       }
     });
@@ -128,7 +128,7 @@ function Address({ setCurrentSelectedAddress, selectedId }) {
       </div>
       <CardHeader>
         <CardTitle>
-          {currentEditedId !== null ? "Edit Address" : "Add New Address"}
+          {currentEditedId !== null ? "ubah alamat" : "tambahkan alamat baru"}
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-3">
@@ -136,7 +136,7 @@ function Address({ setCurrentSelectedAddress, selectedId }) {
           formControls={addressFormControls}
           formData={formData}
           setFormData={setFormData}
-          buttonText={currentEditedId !== null ? "Edit" : "Add"}
+          buttonText={currentEditedId !== null ? "uabh" : "tambahkan"}
           onSubmit={handleManageAddress}
           isBtnDisabled={!isFormValid()}
         />

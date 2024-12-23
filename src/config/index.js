@@ -188,41 +188,44 @@ export const sortOptions = [
   { id: "price-hightolow", label: "Price: High to Low" },
   { id: "title-atoz", label: "Title: A to Z" },
   { id: "title-ztoa", label: "Title: Z to A" },
+
 ];
 
+
+//input di bawah ini untuk bagian pengisian alamat di profile user dan akan di lempar ke bagian pembayaran dan cekot
 export const addressFormControls = [
   {
-    label: "Address",
+    label: "Alamat",
     name: "address",
     componentType: "input",
     type: "text",
-    placeholder: "Enter your address",
+    placeholder: "masukan alamat kamu!",
   },
   {
-    label: "City",
+    label: "Kota",
     name: "city",
     componentType: "input",
     type: "text",
-    placeholder: "Enter your city",
+    placeholder: "masukan kota kamu!",
   },
   {
-    label: "Pincode",
+    label: "Kodepos",
     name: "pincode",
     componentType: "input",
-    type: "text",
-    placeholder: "Enter your pincode",
+    type: "number",
+    placeholder: "masukan kode pos kamu!",
   },
   {
-    label: "Phone",
+    label: "Nohp",
     name: "phone",
     componentType: "input",
-    type: "text",
-    placeholder: "Enter your phone number",
+    type: "number",
+    placeholder: "masukan nomor telephone kamu!",
   },
   {
-    label: "Notes",
+    label: "Catatan",
     name: "notes",
     componentType: "textarea",
-    placeholder: "Enter any additional notes",
+    placeholder: "catatan seperti patokan alamat, nama rumah, dll...",
   },
 ];
