@@ -62,26 +62,26 @@ export const addProductFormElements = [
     name: "category",
     componentType: "select",
     options: [
-      { id: "men", label: "Men" },
-      { id: "women", label: "Women" },
-      { id: "kids", label: "Kids" },
-      { id: "accessories", label: "Accessories" },
-      { id: "footwear", label: "Footwear" },
+      { id: "men", label: "Shirt" },
+      { id: "women", label: "Pants" },
+      { id: "kids", label: "Shoes" },
+      { id: "accessories", label: "Phone" },
+      { id: "footwear", label: "Vape" },
     ],
   },
-  {
-    label: "Brand",
-    name: "brand",
-    componentType: "select",
-    options: [
-      { id: "nike", label: "Nike" },
-      { id: "adidas", label: "Adidas" },
-      { id: "puma", label: "Puma" },
-      { id: "levi", label: "Levi's" },
-      { id: "zara", label: "Zara" },
-      { id: "h&m", label: "H&M" },
-    ],
-  },
+  // {
+  //   label: "Brand",
+  //   name: "brand",
+  //   componentType: "select",
+  //   options: [
+  //     { id: "nike", label: "Nike" },
+  //     { id: "adidas", label: "Adidas" },
+  //     { id: "puma", label: "Puma" },
+  //     { id: "levi", label: "Levi's" },
+  //     { id: "zara", label: "Zara" },
+  //     { id: "h&m", label: "H&M" },
+  //   ],
+  // },
   {
     label: "harga",
     name: "price",
@@ -167,11 +167,11 @@ export const brandOptionsMap = {
 
 export const filterOptions = {
   category: [
-    { id: "men", label: "Men" },
-    { id: "women", label: "Women" },
-    { id: "kids", label: "Kids" },
-    { id: "accessories", label: "Accessories" },
-    { id: "footwear", label: "Footwear" },
+    { id: "men", label: " Shirt" },
+    { id: "women", label: "Pants" },
+    { id: "kids", label: "Shoes" },
+    { id: "accessories", label: "Phone" },
+    { id: "footwear", label: "Vape" },
   ],
   // brand: [
   //   { id: "nike", label: "Nike" },
@@ -188,44 +188,41 @@ export const sortOptions = [
   { id: "price-hightolow", label: "Price: High to Low" },
   { id: "title-atoz", label: "Title: A to Z" },
   { id: "title-ztoa", label: "Title: Z to A" },
-
 ];
 
-
-//input di bawah ini untuk bagian pengisian alamat di profile user dan akan di lempar ke bagian pembayaran dan cekot
 export const addressFormControls = [
   {
-    label: "Alamat",
+    label: "Address",
     name: "address",
     componentType: "input",
     type: "text",
-    placeholder: "masukan alamat kamu!",
+    placeholder: "Enter your address",
   },
   {
-    label: "Kota",
+    label: "City",
     name: "city",
     componentType: "input",
     type: "text",
-    placeholder: "masukan kota kamu!",
+    placeholder: "Enter your city",
   },
   {
-    label: "Kodepos",
+    label: "Pincode",
     name: "pincode",
     componentType: "input",
-    type: "number",
-    placeholder: "masukan kode pos kamu!",
+    type: "text",
+    placeholder: "Enter your pincode",
   },
   {
-    label: "Nohp",
+    label: "Phone",
     name: "phone",
     componentType: "input",
-    type: "number",
-    placeholder: "masukan nomor telephone kamu!",
+    type: "text",
+    placeholder: "Enter your phone number",
   },
   {
-    label: "Catatan",
+    label: "Notes",
     name: "notes",
     componentType: "textarea",
-    placeholder: "catatan seperti patokan alamat, nama rumah, dll...",
+    placeholder: "Enter any additional notes",
   },
 ];
