@@ -11,6 +11,7 @@ import shopSearchSlice from "./shop/search-slice";
 import shopReviewSlice from "./shop/review-slice";
 import commonFeatureSlice from "./common-slice";
 
+//harus nya ini udah fix routing nya
 const store = configureStore({
   reducer: {
     auth: authReducer,
