@@ -139,11 +139,11 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
                 productDetails?.salePrice > 0 ? "line-through" : ""
               }`}
             >
-              ${productDetails?.price}
+              Rp{productDetails?.price}
             </p>
             {productDetails?.salePrice > 0 ? (
               <p className="text-2xl font-bold text-muted-foreground">
-                ${productDetails?.salePrice}
+                Rp{productDetails?.salePrice}
               </p>
             ) : null}
           </div>
@@ -170,7 +170,7 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
                   )
                 }
               >
-                Add to Cart
+                Tambahkan ke keranjang
               </Button>
             )}
           </div>
@@ -200,11 +200,11 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
                   </div>
                 ))
               ) : (
-                <h1>No Reviews</h1>
+                <h1>Tidak ada Review</h1>
               )}
             </div>
             <div className="mt-10 flex-col flex gap-2">
-              <Label>Write your review</Label>
+              <Label>Review dari kamu</Label>
               <div className="flex gap-1">
                 <StarRatingComponent
                   rating={rating}
