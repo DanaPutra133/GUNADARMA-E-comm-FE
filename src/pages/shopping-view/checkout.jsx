@@ -1,23 +1,19 @@
 import Address from "@/components/shopping-view/address";
-// import img from "../../assets/account.jpg";
-import { useDispatch, useSelector } from "react-redux";
 import UserCartItemsContent from "@/components/shopping-view/cart-items-content";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { createNewOrder } from "@/store/shop/order-slice";
-import { Navigate } from "react-router-dom";
 import { useToast } from "@/components/ui/use-toast";
 
 function ShoppingCheckout() {
   const { cartItems } = useSelector((state) => state.shopCart);
   const { user } = useSelector((state) => state.auth);
-  const { approvalURL } = useSelector((state) => state.shopOrder);
   const [currentSelectedAddress, setCurrentSelectedAddress] = useState(null);
-  const [isPaymentStart, setIsPaymemntStart] = useState(false);
+  const [qrisImageUrl, setQrisImageUrl] = useState(""); // URL untuk gambar QRIS
+  const [isOrderCreated, setIsOrderCreated] = useState(false);
   const dispatch = useDispatch();
   const { toast } = useToast();
-
-  console.log(currentSelectedAddress, "cartItems");
 
   const totalCartAmount =
     cartItems && cartItems.items && cartItems.items.length > 0
@@ -32,7 +28,7 @@ function ShoppingCheckout() {
         )
       : 0;
 
-  function handleInitiatePaypalPayment() {
+  function handleCheckout() {
     if (cartItems.length === 0) {
       toast({
         title: "Your cart is empty. Please add items to proceed",
@@ -43,13 +39,14 @@ function ShoppingCheckout() {
     }
     if (currentSelectedAddress === null) {
       toast({
-        title: "Please select one address to proceed.",
+        title: "Pilih 1 alamat! Tekan alamatnya.",
         variant: "destructive",
       });
 
       return;
     }
 
+    // Membuat data order
     const orderData = {
       userId: user?.id,
       cartId: cartItems?._id,
@@ -72,60 +69,55 @@ function ShoppingCheckout() {
         notes: currentSelectedAddress?.notes,
       },
       orderStatus: "pending",
-      paymentMethod: "paypal",
+      paymentMethod: "qris",
       paymentStatus: "pending",
       totalAmount: totalCartAmount,
       orderDate: new Date(),
       orderUpdateDate: new Date(),
-      paymentId: "",
-      payerId: "",
     };
 
-    dispatch(createNewOrder(orderData)).then((data) => {
-      console.log(data, "sangam");
-      if (data?.payload?.success) {
-        setIsPaymemntStart(true);
-      } else {
-        setIsPaymemntStart(false);
-      }
+    // Dispatch action untuk membuat order
+    dispatch(createNewOrder(orderData)).then(() => {
+      // Mengatur URL gambar QRIS setelah checkout
+      setQrisImageUrl("https://api.betabotz.eu.org/api/tools/get-upload?id=s/sNSvw");
+      setIsOrderCreated(true);
     });
-  }
-
-  if (approvalURL) {
-    window.location.href = approvalURL;
   }
 
   return (
     <div className="flex flex-col">
-      <div className="relative h-[300px] w-full overflow-hidden">
-        <img src={img} className="h-full w-full object-cover object-center" />
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5 p-5">
-        <Address
-          selectedId={currentSelectedAddress}
-          setCurrentSelectedAddress={setCurrentSelectedAddress}
-        />
-        <div className="flex flex-col gap-4">
-          {cartItems && cartItems.items && cartItems.items.length > 0
-            ? cartItems.items.map((item) => (
-                <UserCartItemsContent cartItem={item} />
-              ))
-            : null}
-          <div className="mt-8 space-y-4">
-            <div className="flex justify-between">
-              <span className="font-bold">Total</span>
-              <span className="font-bold">${totalCartAmount}</span>
+      {isOrderCreated ? (
+        <div className="flex flex-col items-center">
+          {/* Tampilkan gambar QRIS setelah order dibuat */}
+          <img src={qrisImageUrl} alt="QRIS Code" className="w-80 h-90" />
+          <p className="mt-4">scan qris ini untuk pembayaran.</p>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5 p-5">
+          <Address
+            selectedId={currentSelectedAddress}
+            setCurrentSelectedAddress={setCurrentSelectedAddress}
+          />
+          <div className="flex flex-col gap-4">
+            {cartItems && cartItems.items && cartItems.items.length > 0
+              ? cartItems.items.map((item) => (
+                  <UserCartItemsContent key={item.productId} cartItem={item} />
+                ))
+              : null}
+            <div className="mt-8 space-y-4">
+              <div className="flex justify-between">
+                <span className="font-bold">Total</span>
+                <span className="font-bold">Rp{totalCartAmount}</span>
+              </div>
+            </div>
+            <div className="mt-4 w-full">
+              <Button onClick={handleCheckout} className="w-full">
+                Checkout
+              </Button>
             </div>
           </div>
-          <div className="mt-4 w-full">
-            <Button onClick={handleInitiatePaypalPayment} className="w-full">
-              {isPaymentStart
-                ? "Processing Paypal Payment..."
-                : "Checkout with Paypal"}
-            </Button>
-          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

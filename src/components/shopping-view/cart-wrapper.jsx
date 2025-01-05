@@ -42,7 +42,7 @@ function UserCartWrapper({ cartItems, setOpenCartSheet }) {
         }}
         className="w-full mt-6"
       >
-        Beli
+        Checkout
       </Button>
     </SheetContent>
   );
