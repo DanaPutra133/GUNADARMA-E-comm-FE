@@ -25,6 +25,7 @@ function ShoppingProductTile({
             <Badge className="absolute top-2 left-2 bg-red-500 hover:bg-red-600">
               {`Hanya ${product?.totalStock} produk tersisa`}
             </Badge>
+            /* kalau barang kurang dari 0 maka akan di obral otomatis */
           ) : product?.salePrice > 0 ? (
             <Badge className="absolute top-2 left-2 bg-red-500 hover:bg-red-600">
               Obral
