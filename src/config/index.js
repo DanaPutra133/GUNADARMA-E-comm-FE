@@ -64,8 +64,8 @@ export const addProductFormElements = [
       { id: "Shirt", label: "Shirt" },
       { id: "Pants", label: "Pants" },
       { id: "Shoes", label: "Shoes" },
-      { id: "Vape", label: "Phone" },
-      { id: "Phone", label: "Vape" },
+      { id: "Vape", label: "Vape" },
+      { id: "Phone", label: "Phone" },
     ],
   },
   {
