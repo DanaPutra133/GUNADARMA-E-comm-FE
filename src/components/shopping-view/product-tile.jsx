@@ -25,7 +25,6 @@ function ShoppingProductTile({
             <Badge className="absolute top-2 left-2 bg-red-500 hover:bg-red-600">
               {`Hanya ${product?.totalStock} produk tersisa`}
             </Badge>
-            /* kalau barang kurang dari 0 maka akan di obral otomatis */
           ) : product?.salePrice > 0 ? (
             <Badge className="absolute top-2 left-2 bg-red-500 hover:bg-red-600">
               Obral
@@ -38,11 +37,6 @@ function ShoppingProductTile({
             <span className="text-[16px] text-muted-foreground">
               {categoryOptionsMap[product?.category]}
             </span>
-            {/* melihat produk fitur */}
-            {/*  
-            <span className="text-[16px] text-muted-foreground">
-              {brandOptionsMap[product?.brand]}
-            </span> */}
           </div>
           <div className="flex justify-between items-center mb-2">
             <span
@@ -50,11 +44,11 @@ function ShoppingProductTile({
                 product?.salePrice > 0 ? "line-through" : ""
               } text-lg font-semibold text-primary`}
             >
-              Rp{product?.price}
+              Rp{new Intl.NumberFormat("id-ID").format(product?.price || 0)}
             </span>
             {product?.salePrice > 0 ? (
               <span className="text-lg font-semibold text-primary">
-                Rp{product?.salePrice}
+                Rp{new Intl.NumberFormat("id-ID").format(product?.salePrice || 0)}
               </span>
             ) : null}
           </div>
@@ -62,7 +56,6 @@ function ShoppingProductTile({
       </div>
       <CardFooter>
         {product?.totalStock === 0 ? (
-          // untuk menambahkan ke keranjang dari produk fitur
           <Button className="w-full opacity-60 cursor-not-allowed">
             Stok Habis
           </Button>

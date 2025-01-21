@@ -39,7 +39,7 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
         const getQuantity = getCartItems[indexOfCurrentItem].quantity;
         if (getQuantity + 1 > getTotalStock) {
           toast({
-            title: `hanya ${getQuantity} max jumlah barnag yang bisa di tambahkan!`,
+            title: `Hanya ${getQuantity} max jumlah barang yang bisa ditambahkan!`,
             variant: "destructive",
           });
           return;
@@ -56,7 +56,7 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
       if (data?.payload?.success) {
         dispatch(fetchCartItems(user?.id));
         toast({
-          title: "Produk berhasil di tambahkan ke keranjang",
+          title: "Produk berhasil ditambahkan ke keranjang",
         });
       }
     });
@@ -72,7 +72,7 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
   function handleAddReview() {
     if (!user) {
       toast({
-        title: "kamu harus login!",
+        title: "Kamu harus login!",
         variant: "destructive",
       });
       return;
@@ -87,17 +87,17 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
         reviewValue: rating,
       })
     ).then((data) => {
-      console.log("response untuk cek review masuk:", data); // Debugging
+      console.log("Response untuk cek review masuk:", data); // Debugging
       if (data.payload?.success) {
         setRating(0);
         setReviewMsg("");
         dispatch(getReviews(productDetails?._id));
         toast({
-          title: "review berhail di tambahkan!",
+          title: "Review berhasil ditambahkan!",
         });
       } else {
         toast({
-          title: "GAGAL! max mengirim review 1 kali",
+          title: "Gagal! Maksimal mengirim review 1 kali",
           variant: "destructive",
         });
       }
@@ -139,11 +139,11 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
                 productDetails?.salePrice > 0 ? "line-through" : ""
               }`}
             >
-              Rp{productDetails?.price}
+              Rp{new Intl.NumberFormat("id-ID").format(productDetails?.price || 0)}
             </p>
             {productDetails?.salePrice > 0 ? (
               <p className="text-2xl font-bold text-muted-foreground">
-                Rp{productDetails?.salePrice}
+                Rp{new Intl.NumberFormat("id-ID").format(productDetails?.salePrice || 0)}
               </p>
             ) : null}
           </div>
@@ -158,7 +158,7 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
           <div className="mt-5 mb-5">
             {productDetails?.totalStock === 0 ? (
               <Button className="w-full opacity-60 cursor-not-allowed">
-                Out of Stock
+                Stok Habis
               </Button>
             ) : (
               <Button
@@ -170,7 +170,7 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
                   )
                 }
               >
-                Tambahkan ke keranjang
+                Tambahkan ke Keranjang
               </Button>
             )}
           </div>
@@ -215,13 +215,13 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
                 name="reviewMsg"
                 value={reviewMsg}
                 onChange={(event) => setReviewMsg(event.target.value)}
-                placeholder="Type your review here"
+                placeholder="Ketikkan review kamu di sini"
               />
               <Button
                 onClick={handleAddReview}
                 disabled={reviewMsg.trim() === ""}
               >
-                Submit
+                Kirim Review
               </Button>
             </div>
           </div>

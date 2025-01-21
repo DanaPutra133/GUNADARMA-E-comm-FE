@@ -12,7 +12,7 @@ function UserCartItemsContent({ cartItem }) {
   const { toast } = useToast();
 
   function handleUpdateQuantity(getCartItem, typeOfAction) {
-    if (typeOfAction == "plus") {
+    if (typeOfAction === "plus") {
       let getCartItems = cartItems.items || [];
 
       if (getCartItems.length) {
@@ -23,18 +23,15 @@ function UserCartItemsContent({ cartItem }) {
         const getCurrentProductIndex = productList.findIndex(
           (product) => product._id === getCartItem?.productId
         );
-        const getTotalStock = productList[getCurrentProductIndex].totalStock;
-
-        console.log(getCurrentProductIndex, getTotalStock, "getTotalStock");
+        const getTotalStock = productList[getCurrentProductIndex]?.totalStock;
 
         if (indexOfCurrentCartItem > -1) {
           const getQuantity = getCartItems[indexOfCurrentCartItem].quantity;
           if (getQuantity + 1 > getTotalStock) {
             toast({
-              title: `hanya ada ${getQuantity} barang tersisa`,
+              title: `Hanya ada ${getTotalStock} barang tersisa`,
               variant: "destructive",
             });
-
             return;
           }
         }
@@ -71,6 +68,13 @@ function UserCartItemsContent({ cartItem }) {
     });
   }
 
+  const pangerangay = (value) => {
+    return new Intl.NumberFormat("id-ID", {
+      style: "currency",
+      currency: "IDR",
+    }).format(value);
+  };
+
   return (
     <div className="flex items-center space-x-4">
       <img
@@ -99,17 +103,16 @@ function UserCartItemsContent({ cartItem }) {
             onClick={() => handleUpdateQuantity(cartItem, "plus")}
           >
             <Plus className="w-4 h-4" />
-            <span className="sr-only">Decrease</span>
+            <span className="sr-only">Increase</span>
           </Button>
         </div>
       </div>
       <div className="flex flex-col items-end">
         <p className="font-semibold">
-          Rp
-          {(
+          {pangerangay(
             (cartItem?.salePrice > 0 ? cartItem?.salePrice : cartItem?.price) *
-            cartItem?.quantity
-          ).toFixed(2)}
+              cartItem?.quantity
+          )}
         </p>
         <Trash
           onClick={() => handleCartItemDelete(cartItem)}
