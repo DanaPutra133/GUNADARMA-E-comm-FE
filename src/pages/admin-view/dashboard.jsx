@@ -48,7 +48,7 @@ function AdminDashboard() {
         <p className="text-red-500 mt-2 text-sm">{warningMessage}</p>
       )}
       {/* button unggah nya */}
-      <Button onClick={handleUploadFeatureImage} className="mt-5 w-full">
+      <Button onClick={handleUploadFeatureImage} className="mb-5 w-full">
         Unggah foto iklan
       </Button>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
