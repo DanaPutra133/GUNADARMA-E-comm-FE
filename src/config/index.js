@@ -1,4 +1,3 @@
-
 // config cek buat bagian login sama register
 export const registerFormControls = [
   {
@@ -42,66 +41,66 @@ export const loginFormControls = [
 ];
 
 
-//bagian p
+//bagian admin untuk melakukan uplaod barang, inisialisasi nya, jangan di ubah ubah!
 export const addProductFormElements = [
   {
     label: "Title",
     name: "title",
     componentType: "input",
     type: "text",
-    placeholder: "Enter product title",
+    placeholder: "masukan judul barang kamu",
   },
   {
     label: "Description",
     name: "description",
     componentType: "textarea",
-    placeholder: "Enter product description",
+    placeholder: "deskripsikan nama barang kamu",
   },
   {
     label: "Category",
     name: "category",
     componentType: "select",
     options: [
-      { id: "men", label: "Shirt" },
-      { id: "women", label: "Pants" },
-      { id: "kids", label: "Shoes" },
-      { id: "accessories", label: "Phone" },
-      { id: "footwear", label: "Vape" },
+      { id: "Shirt", label: "Shirt" },
+      { id: "Pants", label: "Pants" },
+      { id: "Shoes", label: "Shoes" },
+      { id: "Vape", label: "Phone" },
+      { id: "Phone", label: "Vape" },
     ],
   },
-  // {
-  //   label: "Brand",
-  //   name: "brand",
-  //   componentType: "select",
-  //   options: [
-  //     { id: "nike", label: "Nike" },
-  //     { id: "adidas", label: "Adidas" },
-  //     { id: "puma", label: "Puma" },
-  //     { id: "levi", label: "Levi's" },
-  //     { id: "zara", label: "Zara" },
-  //     { id: "h&m", label: "H&M" },
-  //   ],
-  // },
   {
     label: "harga",
     name: "price",
     componentType: "input",
-    type: "number",
-    placeholder: "Enter product price",
-  },
+    type: "text",
+    placeholder: "masukan harga utama nya!",
+    // gak jalan anjay buat ganti ke rupiah nya owkwkow
+    format: (value) => new Intl.NumberFormat('id-ID').format(value),
+    onInput: (event) => {
+      const rawValue = event.target.value.replace(/\./g, "");
+      const formattedValue = new Intl.NumberFormat('id-ID').format(Number(rawValue || 0));
+      event.target.value = formattedValue;
+    },
+  },
   {
     label: "Sale Price",
     name: "salePrice",
     componentType: "input",
-    type: "number",
-    placeholder: "Enter sale price (optional)",
-  },
+    type: "text",
+    placeholder: "(optional) harga jual sebelum nya",
+    format: (value) => new Intl.NumberFormat('id-ID').format(value),
+    onInput: (event) => {
+      const rawValue = event.target.value.replace(/\./g, "");
+      const formattedValue = new Intl.NumberFormat('id-ID').format(Number(rawValue || 0));
+      event.target.value = formattedValue;
+    },
+  },
   {
     label: "Total Stock",
     name: "totalStock",
     componentType: "input",
     type: "number",
-    placeholder: "Enter total stock",
+    placeholder: "masukan stock barang nya",
   },
 ];
 
@@ -117,28 +116,28 @@ export const shoppingViewHeaderMenuItems = [
     path: "/shop/listing",
   },
   {
-    id: "men",
-    label: "Men",
+    id: "Shirt",
+    label: "Shirt",
     path: "/shop/listing",
   },
   {
-    id: "women",
-    label: "Women",
+    id: "Pants",
+    label: "Pants",
     path: "/shop/listing",
   },
   {
-    id: "kids",
-    label: "Kids",
+    id: "Shoes",
+    label: "Shoes",
     path: "/shop/listing",
   },
   {
-    id: "footwear",
-    label: "Footwear",
+    id: "Vape",
+    label: "Vape",
     path: "/shop/listing",
   },
   {
-    id: "accessories",
-    label: "Accessories",
+    id: "Phone",
+    label: "Phone",
     path: "/shop/listing",
   },
   {
@@ -149,11 +148,11 @@ export const shoppingViewHeaderMenuItems = [
 ];
 
 export const categoryOptionsMap = {
-  men: "Men",
-  women: "Women",
-  kids: "Kids",
-  accessories: "Accessories",
-  footwear: "Footwear",
+  Shirt: "Shirt",
+  Pants: "Pants",
+  Shoes: "Shoes",
+  Vape: "Vape",
+  Phone: "Phone",
 };
 
 export const brandOptionsMap = {
@@ -167,20 +166,12 @@ export const brandOptionsMap = {
 
 export const filterOptions = {
   category: [
-    { id: "men", label: " Shirt" },
-    { id: "women", label: "Pants" },
-    { id: "kids", label: "Shoes" },
-    { id: "accessories", label: "Phone" },
-    { id: "footwear", label: "Vape" },
+    { id: "Shirt", label: " Shirt" },
+    { id: "Pants", label: "Pants" },
+    { id: "Shoes", label: "Shoes" },
+    { id: "Vape", label: "Phone" },
+    { id: "Phone", label: "Vape" },
   ],
-  // brand: [
-  //   { id: "nike", label: "Nike" },
-  //   { id: "adidas", label: "Adidas" },
-  //   { id: "puma", label: "Puma" },
-  //   { id: "levi", label: "Levi's" },
-  //   { id: "zara", label: "Zara" },
-  //   { id: "h&m", label: "H&M" },
-  // ],
 };
 
 export const sortOptions = [

@@ -44,14 +44,6 @@ const categoriesWithIcon = [
   { id: "Vape", label: "Vape", icon: PiCigaretteDuotone },
 ];
 
-// const brandsWithIcon = [
-//   { id: "nike", label: "Nike", icon: Shirt },
-//   { id: "adidas", label: "Adidas", icon: WashingMachine },
-//   { id: "puma", label: "Puma", icon: ShoppingBasket },
-//   { id: "levi", label: "Levi's", icon: Airplay },
-//   { id: "zara", label: "Zara", icon: Images },
-//   { id: "h&m", label: "H&M", icon: Heater },
-// ];
 function ShoppingHome() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const { productList, productDetails } = useSelector(
