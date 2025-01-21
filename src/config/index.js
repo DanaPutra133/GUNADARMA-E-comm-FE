@@ -72,7 +72,7 @@ export const addProductFormElements = [
     label: "harga",
     name: "price",
     componentType: "input",
-    type: "text",
+    type: "number",
     placeholder: "Masukkan harga utama nya!",
     // gak jalan anjay buat ganti ke rupiah nya owkwkow
     format: (value) => new Intl.NumberFormat('id-ID').format(value),
@@ -86,7 +86,7 @@ export const addProductFormElements = [
     label: "Sale Price",
     name: "salePrice",
     componentType: "input",
-    type: "text",
+    type: "number",
     placeholder: "(optional) harga jual sebelum nya",
     format: (value) => new Intl.NumberFormat('id-ID').format(value),
     onInput: (event) => {
