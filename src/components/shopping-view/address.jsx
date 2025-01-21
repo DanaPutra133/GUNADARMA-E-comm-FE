@@ -34,7 +34,7 @@ function Address({ setCurrentSelectedAddress, selectedId }) {
     if (addressList.length >= 3 && currentEditedId === null) {
       setFormData(initialAddressFormData);
       toast({
-        title: "cuma bisa menambahkan 3 alamat saja!",
+        title: "Cuma bisa menambahkan 3 alamat saja!",
         variant: "destructive",
       });
 
@@ -54,7 +54,7 @@ function Address({ setCurrentSelectedAddress, selectedId }) {
             setCurrentEditedId(null);
             setFormData(initialAddressFormData);
             toast({
-              title: "alamat berhasil di ubah!",
+              title: "Alamat berhasil di ubah!",
             });
           }
         })
@@ -68,7 +68,7 @@ function Address({ setCurrentSelectedAddress, selectedId }) {
             dispatch(fetchAllAddresses(user?.id));
             setFormData(initialAddressFormData);
             toast({
-              title: "alamat berhasil di tambah!",
+              title: "Alamat berhasil di tambah!",
             });
           }
         });
@@ -81,7 +81,7 @@ function Address({ setCurrentSelectedAddress, selectedId }) {
       if (data?.payload?.success) {
         dispatch(fetchAllAddresses(user?.id));
         toast({
-          title: "alamat berhasil di hapus!",
+          title: "Alamat berhasil di hapus!",
         });
       }
     });
@@ -128,7 +128,7 @@ function Address({ setCurrentSelectedAddress, selectedId }) {
       </div>
       <CardHeader>
         <CardTitle>
-          {currentEditedId !== null ? "ubah alamat" : "tambahkan alamat baru"}
+          {currentEditedId !== null ? "Ubah alamat" : "Tambahkan alamat baru"}
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-3">
@@ -136,7 +136,7 @@ function Address({ setCurrentSelectedAddress, selectedId }) {
           formControls={addressFormControls}
           formData={formData}
           setFormData={setFormData}
-          buttonText={currentEditedId !== null ? "uabh" : "tambahkan"}
+          buttonText={currentEditedId !== null ? "Ubah" : "Tambahkan"}
           onSubmit={handleManageAddress}
           isBtnDisabled={!isFormValid()}
         />

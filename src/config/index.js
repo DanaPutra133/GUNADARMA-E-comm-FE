@@ -3,21 +3,21 @@ export const registerFormControls = [
   {
     name: "userName",
     label: "User Name",
-    placeholder: "Masukan username kamu",
+    placeholder: "Masukkan username kamu",
     componentType: "input",
     type: "text",
   },
   {
     name: "email",
     label: "Email",
-    placeholder: "Masukan email kamu",
+    placeholder: "Masukkan email kamu",
     componentType: "input",
     type: "email",
   },
   {
     name: "password",
     label: "Password",
-    placeholder: "Masukan password kamu",
+    placeholder: "Masukkan password kamu",
     componentType: "input",
     type: "password",
   },
@@ -27,14 +27,14 @@ export const loginFormControls = [
   {
     name: "email",
     label: "Email",
-    placeholder: "Masukan email kamu",
+    placeholder: "Masukkan email kamu",
     componentType: "input",
     type: "email",
   },
   {
     name: "password",
     label: "Password",
-    placeholder: "Masukan password kamu",
+    placeholder: "Masukkan password kamu",
     componentType: "input",
     type: "password",
   },
@@ -48,7 +48,7 @@ export const addProductFormElements = [
     name: "title",
     componentType: "input",
     type: "text",
-    placeholder: "masukan judul barang kamu",
+    placeholder: "Masukkan judul barang kamu",
   },
   {
     label: "Description",
@@ -73,7 +73,7 @@ export const addProductFormElements = [
     name: "price",
     componentType: "input",
     type: "text",
-    placeholder: "masukan harga utama nya!",
+    placeholder: "Masukkan harga utama nya!",
     // gak jalan anjay buat ganti ke rupiah nya owkwkow
     format: (value) => new Intl.NumberFormat('id-ID').format(value),
     onInput: (event) => {
@@ -100,7 +100,7 @@ export const addProductFormElements = [
     name: "totalStock",
     componentType: "input",
     type: "number",
-    placeholder: "masukan stock barang nya",
+    placeholder: "Masukkan stock barang nya",
   },
 ];
 
@@ -183,35 +183,35 @@ export const sortOptions = [
 
 export const addressFormControls = [
   {
-    label: "alamat",
+    label: "Alamat",
     name: "address",
     componentType: "input",
     type: "text",
-    placeholder: "masukan alamat kamu!",
+    placeholder: "Masukkan alamat kamu!",
   },
   {
-    label: "kota",
+    label: "Kota",
     name: "city",
     componentType: "input",
     type: "text",
-    placeholder: "masukan kota kamu!",
+    placeholder: "Masukkan kota kamu!",
   },
   {
-    label: "kode pos",
+    label: "Kode Pos",
     name: "pincode",
     componentType: "input",
     type: "number",
-    placeholder: "masukan kode pos kamu!",
+    placeholder: "Masukkan kode pos kamu!",
   },
   {
-    label: "nomor handphone",
+    label: "Nomor Handphone",
     name: "phone",
     componentType: "input",
     type: "number",
-    placeholder: "masukan nomor handphone kamu!",
+    placeholder: "Masukkan nomor handphone kamu!",
   },
   {
-    label: "catatan",
+    label: "Catatan",
     name: "notes",
     componentType: "textarea",
     placeholder: "berikan catatan di alamat kamu!",
