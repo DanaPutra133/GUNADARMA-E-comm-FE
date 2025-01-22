@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createNewOrder } from "@/store/shop/order-slice";
+import { deleteCartItem } from "@/store/shop/cart-slice"; // Import action untuk menghapus item di keranjang
 import { useToast } from "@/components/ui/use-toast";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 
@@ -33,12 +34,11 @@ function ShoppingCheckout() {
       : 0;
 
   function handleCheckout() {
-    if (cartItems.length === 0) {
+    if (cartItems.items.length === 0) {
       toast({
         title: "Your cart is empty. Please add items to proceed",
         variant: "destructive",
       });
-
       return;
     }
     if (currentSelectedAddress === null) {
@@ -46,7 +46,6 @@ function ShoppingCheckout() {
         title: "Pilih 1 alamat! Tekan alamatnya.",
         variant: "destructive",
       });
-
       return;
     }
 
@@ -92,23 +91,32 @@ function ShoppingCheckout() {
   function handleSelesai() {
     if (!uploadedFile) {
       toast({
-        title: "Please upload the payment proof.",
+        title: "silahkan upload bukti pembayaran!.",
         variant: "destructive",
       });
       return;
     }
 
-    // Simulate sending data to the server
+    // Hapus semua item di keranjang, kita jadikan 0 semua
+    if (cartItems.items && cartItems.items.length > 0) {
+      cartItems.items.forEach((item) => {
+        dispatch(
+          deleteCartItem({ userId: user?.id, productId: item.productId })
+        );
+      });
+    }
+
+    // simulasi pengiriman data ke admin
     setShowPopup(true);
 
     setTimeout(() => {
       setShowPopup(false);
       toast({
-        title: "Data has been sent to admin for processing.",
+        title: "Data telah di kirim ke admin untuk di proses :D.",
         variant: "success",
       });
-      navigate("/shop/home"); // Redirect user to the main menu
-    }, 2000); // Delay to show the popup notification
+      navigate("/shop/home"); //path ke home
+    }, 2000); // Delay untuk menampilkan notifikasi popup
   }
 
   return (
@@ -136,7 +144,7 @@ function ShoppingCheckout() {
             {cartItems && cartItems.items && cartItems.items.length > 0
               ? cartItems.items.map((item) => (
                   <div key={item.productId} className="flex justify-between items-center">
-                    <UserCartItemsContent cartItem={item} />            
+                    <UserCartItemsContent cartItem={item} />
                   </div>
                 ))
               : null}
