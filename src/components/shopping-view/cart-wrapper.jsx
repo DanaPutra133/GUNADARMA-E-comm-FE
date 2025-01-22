@@ -30,20 +30,6 @@ function UserCartWrapper({ cartItems, setOpenCartSheet }) {
           ? cartItems.map((item) => (
               <div key={item.productId} className="flex justify-between items-center">
                 <UserCartItemsContent cartItem={item} />
-                <div className="text-right">
-                  <span
-                    className={`${
-                      item?.salePrice > 0 ? "line-through" : ""
-                    } text-lg font-semibold text-primary`}
-                  >
-                    Rp{new Intl.NumberFormat("id-ID").format(item?.price || 0)}
-                  </span>
-                  {item?.salePrice > 0 ? (
-                    <span className="text-lg font-bold block">
-                      Rp{new Intl.NumberFormat("id-ID").format(item?.salePrice || 0)}
-                    </span>
-                  ) : null}
-                </div>
               </div>
             ))
           : <p className="text-center text-gray-500">Keranjang kosong.</p>}
