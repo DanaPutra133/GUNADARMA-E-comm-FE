@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createNewOrder } from "@/store/shop/order-slice";
-import { deleteCartItem } from "@/store/shop/cart-slice"; // Import action untuk menghapus item di keranjang
+import { deleteCartItem } from "@/store/shop/cart-slice";
 import { useToast } from "@/components/ui/use-toast";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
 
 function ShoppingCheckout() {
   const { cartItems } = useSelector((state) => state.shopCart);
@@ -15,10 +15,10 @@ function ShoppingCheckout() {
   const [qrisImageUrl, setQrisImageUrl] = useState("");
   const [isOrderCreated, setIsOrderCreated] = useState(false);
   const [uploadedFile, setUploadedFile] = useState(null);
-  const [showPopup, setShowPopup] = useState(false); // Popup notification state
+  const [showPopup, setShowPopup] = useState(false);
   const dispatch = useDispatch();
   const { toast } = useToast();
-  const navigate = useNavigate(); // Initialize navigation
+  const navigate = useNavigate();
 
   const totalCartAmount =
     cartItems && cartItems.items && cartItems.items.length > 0
@@ -36,9 +36,10 @@ function ShoppingCheckout() {
   function handleCheckout() {
     if (cartItems.items.length === 0) {
       toast({
-        title: "Your cart is empty. Please add items to proceed",
+        title: "keranjang kamu kosong, isi dulu yuk...",
         variant: "destructive",
       });
+
       return;
     }
     if (currentSelectedAddress === null) {
@@ -46,6 +47,7 @@ function ShoppingCheckout() {
         title: "Pilih 1 alamat! Tekan alamatnya.",
         variant: "destructive",
       });
+
       return;
     }
 
@@ -84,39 +86,39 @@ function ShoppingCheckout() {
     });
   }
 
-  function handleFileUpload(event) {
-    setUploadedFile(event.target.files[0]);
-  }
-
-  function handleSelesai() {
+  async function handleSelesai() {
     if (!uploadedFile) {
       toast({
-        title: "silahkan upload bukti pembayaran!.",
+        title: "Upload bukti pembayaran kamu!",
         variant: "destructive",
       });
       return;
     }
 
-    // Hapus semua item di keranjang, kita jadikan 0 semua
+    // Hapus semua item di keranjang
     if (cartItems.items && cartItems.items.length > 0) {
-      cartItems.items.forEach((item) => {
-        dispatch(
+      for (const item of cartItems.items) {
+        await dispatch(
           deleteCartItem({ userId: user?.id, productId: item.productId })
         );
-      });
+      }
     }
 
-    // simulasi pengiriman data ke admin
+    // Simulasi pengiriman data ke server
     setShowPopup(true);
 
     setTimeout(() => {
       setShowPopup(false);
       toast({
-        title: "Data telah di kirim ke admin untuk di proses :D.",
+        title: "Data telah di kirim ke admin untuk di proses.",
         variant: "success",
       });
-      navigate("/shop/home"); //path ke home
-    }, 2000); // Delay untuk menampilkan notifikasi popup
+      navigate("/shop/home"); // user di lempar ke home
+    }, 2000); 
+  }
+
+  function handleFileUpload(event) {
+    setUploadedFile(event.target.files[0]);
   }
 
   return (
@@ -144,7 +146,7 @@ function ShoppingCheckout() {
             {cartItems && cartItems.items && cartItems.items.length > 0
               ? cartItems.items.map((item) => (
                   <div key={item.productId} className="flex justify-between items-center">
-                    <UserCartItemsContent cartItem={item} />
+                    <UserCartItemsContent cartItem={item} />            
                   </div>
                 ))
               : null}
