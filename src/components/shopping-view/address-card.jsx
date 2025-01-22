@@ -1,6 +1,7 @@
 import { Button } from "../ui/button";
 import { Card, CardContent, CardFooter } from "../ui/card";
 import { Label } from "../ui/label";
+import { useState } from "react";
 
 function AddressCard({
   addressInfo,
@@ -9,6 +10,8 @@ function AddressCard({
   setCurrentSelectedAddress,
   selectedId,
 }) {
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false); // State for the confirmation dialog
+
   return (
     <Card
       onClick={
@@ -31,8 +34,48 @@ function AddressCard({
       </CardContent>
       <CardFooter className="p-3 flex justify-between">
         <Button onClick={() => handleEditAddress(addressInfo)}>Edit</Button>
-        <Button onClick={() => handleDeleteAddress(addressInfo)}>Delete</Button>
+        <Button onClick={() => setShowDeleteDialog(true)}>Delete</Button>
       </CardFooter>
+
+      {/* Confirmation dialog for delete */}
+      {showDeleteDialog && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          {/* Background overlay */}
+          <div
+            className="absolute inset-0 bg-black bg-opacity-50"
+            onClick={() => setShowDeleteDialog(false)}
+          ></div>
+
+          {/* Pop-up box */}
+          <div className="relative bg-white rounded-lg shadow-lg p-6 w-[90%] max-w-sm">
+            <h2 className="text-lg font-bold text-gray-800">
+              Konfirmasi Hapus Alamat
+            </h2>
+            <p className="mt-2 text-gray-600">
+              Apakah Anda yakin ingin menghapus alamat ini?
+            </p>
+            <div className="mt-4 flex justify-end gap-3">
+              {/* Batalkan */}
+              <Button
+                variant="secondary"
+                onClick={() => setShowDeleteDialog(false)}
+              >
+                Batalkan
+              </Button>
+              {/* Hapus */}
+              <Button
+                variant="danger"
+                onClick={() => {
+                  handleDeleteAddress(addressInfo);
+                  setShowDeleteDialog(false);
+                }}
+              >
+                Hapus
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
     </Card>
   );
 }
