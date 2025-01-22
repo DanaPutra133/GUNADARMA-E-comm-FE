@@ -136,7 +136,7 @@ function AuthRegister() {
           Masuk
         </Link>
       </p>
-
+ {/* gimik */}
       {/* Tombol Registrasi dengan Media Sosial */}
       <div className="space-y-2 mt-4">
         <button className="w-full py-2 px-4 bg-blue-600 text-white rounded-lg flex items-center justify-center space-x-2">
