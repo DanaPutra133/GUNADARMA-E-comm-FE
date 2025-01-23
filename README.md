@@ -31,15 +31,17 @@ Aplikasi e-commerce Gunadarma. Website ini terdiri dari dua sisi: sisi pengguna 
    ```bash
    git clone https://github.com/DanaPutra133/GUNADARMA-E-comm-FE.git
 
-2. Install pacakge:
+2. Install module:
 
-   ```bash
-  npm i
+   ```
+   npm install
+   ```
 
-3. Running web:
+3. Running website:
 
-   ```bash
-  npm run dev
+   ```
+   npm run dev
+   ```
 
 ## Catatan
 
