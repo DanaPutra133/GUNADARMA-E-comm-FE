@@ -10,7 +10,7 @@ export const getFeatureImages = createAsyncThunk(
   "/order/getFeatureImages",
   async () => {
     const response = await axios.get(
-      `http://localhost:5004/api/common/feature/get`
+      `https://tugas.aquafxca.my.id/api/common/feature/get`
     );
 
     return response.data;
@@ -21,7 +21,7 @@ export const addFeatureImage = createAsyncThunk(
   "/order/addFeatureImage",
   async (image) => {
     const response = await axios.post(
-      `http://localhost:5004/api/common/feature/add`,
+      `https://tugas.aquafxca.my.id/api/common/feature/add`,
       { image }
     );
 

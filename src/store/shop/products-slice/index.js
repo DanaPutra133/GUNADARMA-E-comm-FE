@@ -18,7 +18,7 @@ export const fetchAllFilteredProducts = createAsyncThunk(
     });
 
     const result = await axios.get(
-      `http://localhost:5004/api/shop/products/get?${query}`
+      `https://tugas.aquafxca.my.id/api/shop/products/get?${query}`
     );
 
     console.log(result);
@@ -31,7 +31,7 @@ export const fetchProductDetails = createAsyncThunk(
   "/products/fetchProductDetails",
   async (id) => {
     const result = await axios.get(
-      `http://localhost:5004/api/shop/products/get/${id}`
+      `https://tugas.aquafxca.my.id/api/shop/products/get/${id}`
     );
 
     return result?.data;
