@@ -175,10 +175,10 @@ export const filterOptions = {
 };
 
 export const sortOptions = [
-  { id: "price-lowtohigh", label: "Price: Low to High" },
-  { id: "price-hightolow", label: "Price: High to Low" },
-  { id: "title-atoz", label: "Title: A to Z" },
-  { id: "title-ztoa", label: "Title: Z to A" },
+  { id: "price-lowtohigh", label: "Harga: Low - High" },
+  { id: "price-hightolow", label: "Harga: High - Low" },
+  { id: "title-atoz", label: "Nama: A - Z" },
+  { id: "title-ztoa", label: "Nama: Z - A" },
 ];
 
 export const addressFormControls = [

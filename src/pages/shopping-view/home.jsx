@@ -36,6 +36,8 @@ import { useToast } from "@/components/ui/use-toast";
 import ProductDetailsDialog from "@/components/shopping-view/product-details";
 import { getFeatureImages } from "@/store/common-slice";
 
+
+// variabel untuk menarik kategori barnag
 const categoriesWithIcon = [
   { id: "Shirt", label: "Shirt", icon: ShirtIcon },
   { id: "Pants", label: "Pants", icon: PiPants },
@@ -117,6 +119,13 @@ function ShoppingHome() {
     dispatch(getFeatureImages());
   }, [dispatch]);
 
+  // di bawah ini ada yang buat render jumbotron iklan<img
+                //src={slide?.image}
+                //key={index}
+                //className={`${
+                  //index === currentSlide ? "opacity-100" : "opacity-0"
+                //} absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000`}
+             // />
   return (
     <div className="flex flex-col min-h-screen">
       <div className="relative w-full h-[600px] overflow-hidden">
