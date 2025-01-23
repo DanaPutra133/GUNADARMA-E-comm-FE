@@ -59,7 +59,7 @@ function ProductImageUpload({
     const data = new FormData();
     data.append("my_file", imageFile);
     const response = await axios.post(
-      "http://192.168.0.100:5004/api/admin/products/upload-image",
+      "https://tugas.aquafxca.my.id/api/admin/products/upload-image",
       data
     );
     console.log(response, "response");

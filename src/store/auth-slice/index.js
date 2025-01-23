@@ -12,7 +12,7 @@ export const registerUser = createAsyncThunk(
 
   async (formData) => {
     const response = await axios.post(
-      "http://192.168.0.100:5004/api/auth/register",
+      "https://tugas.aquafxca.my.id/api/auth/register",
       formData,
       {
         withCredentials: true,
@@ -28,7 +28,7 @@ export const loginUser = createAsyncThunk(
 
   async (formData) => {
     const response = await axios.post(
-      "http://192.168.0.100:5004/api/auth/login",
+      "https://tugas.aquafxca.my.id/api/auth/login",
       formData,
       {
         withCredentials: true,
@@ -44,7 +44,7 @@ export const logoutUser = createAsyncThunk(
 
   async () => {
     const response = await axios.post(
-      "http://192.168.0.100:5004/api/auth/logout",
+      "https://tugas.aquafxca.my.id/api/auth/logout",
       {},
       {
         withCredentials: true,
@@ -60,7 +60,7 @@ export const checkAuth = createAsyncThunk(
 
   async () => {
     const response = await axios.get(
-      "hhttp://192.168.0.100:5004/api/auth/check-auth",
+      "https://tugas.aquafxca.my.id/api/auth/check-auth",
       {
         withCredentials: true,
         headers: {

@@ -10,7 +10,7 @@ export const getAllOrdersForAdmin = createAsyncThunk(
   "/order/getAllOrdersForAdmin",
   async () => {
     const response = await axios.get(
-      `http://192.168.0.100:5004/api/admin/orders/get`
+      `https://tugas.aquafxca.my.id/api/admin/orders/get`
     );
 
     return response.data;
@@ -21,7 +21,7 @@ export const getOrderDetailsForAdmin = createAsyncThunk(
   "/order/getOrderDetailsForAdmin",
   async (id) => {
     const response = await axios.get(
-      `http://192.168.0.100:5004/api/admin/orders/details/${id}`
+      `https://tugas.aquafxca.my.id/api/admin/orders/details/${id}`
     );
 
     return response.data;
@@ -32,7 +32,7 @@ export const updateOrderStatus = createAsyncThunk(
   "/order/updateOrderStatus",
   async ({ id, orderStatus }) => {
     const response = await axios.put(
-      `http://192.168.0.100:5004/api/admin/orders/update/${id}`,
+      `https://tugas.aquafxca.my.id/api/admin/orders/update/${id}`,
       {
         orderStatus,
       }
