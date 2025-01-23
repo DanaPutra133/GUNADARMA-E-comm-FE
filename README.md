@@ -1,6 +1,6 @@
 # GUNADARMA E-comm FE
 
-Aplikasi e-commerce Gunadarma. Website ini terdiri dari dua sisi: sisi pengguna (user side) dan sisi admin (admin side).
+Website e-commerce Gunadarma. Website ini terdiri dari dua sisi: sisi pengguna (user side) dan sisi admin (admin side).
 
 ## Fitur
 
