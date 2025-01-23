@@ -63,7 +63,7 @@ https://www.aquafxca.my.id
 
 - Link Figma: https://www.figma.com/design/IwRY2OLD5cLqQhs4DrPvQ2/Untitled?node-id=1-9&t=S2tPWnXvhwTDSEuO-1 
 
-- draw io (topolosi, flowchart, dll): https://drive.google.com/file/d/1kHdEBYwfzz1ZnQo3l3aZ8h3jhcqynyLc/view?usp=sharing
+- draw io (topologi server, flowchart, dll): https://drive.google.com/file/d/1kHdEBYwfzz1ZnQo3l3aZ8h3jhcqynyLc/view?usp=sharing
 > buka dengan draw.io ada di atas
 > desktop only or you already linked account to draw io :D
 
