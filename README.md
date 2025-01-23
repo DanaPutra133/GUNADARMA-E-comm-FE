@@ -23,6 +23,7 @@ Aplikasi e-commerce Gunadarma. Website ini terdiri dari dua sisi: sisi pengguna 
 - vite
 - Axios
 - React Router
+- React icons
 
 ## cara install
 
