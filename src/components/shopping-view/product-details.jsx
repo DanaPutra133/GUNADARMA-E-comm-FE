@@ -114,9 +114,10 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
         reviews.length
       : 0;
 
+      // scroll di ubah menjadi 1 area bukan hanya bagian review agar mencangkup bagian bawah
   return (
     <Dialog open={open} onOpenChange={handleDialogClose}>
-      <DialogContent className="grid grid-cols-2 gap-8 sm:p-12 max-w-[90vw] sm:max-w-[80vw] lg:max-w-[70vw]">
+      <DialogContent className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:p-12 max-h-[90vh] overflow-auto max-w-[90vw] sm:max-w-[80vw] lg:max-w-[70vw]">
         <div className="relative overflow-hidden rounded-lg">
           <img
             src={productDetails?.image}
@@ -128,21 +129,21 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
         </div>
         <div className="">
           <div>
-            <h1 className="text-3xl font-extrabold">{productDetails?.title}</h1>
-            <p className="text-muted-foreground text-2xl mb-5 mt-4">
+            <h1 className="text-2xl lg:text-3xl font-extrabold">{productDetails?.title}</h1>
+            <p className="text-muted-foreground text-lg lg:text-2xl mb-5 mt-4">
               {productDetails?.description}
             </p>
           </div>
           <div className="flex items-center justify-between">
             <p
-              className={`text-3xl font-bold text-primary ${
+              className={`text-2xl lg:text-3xl font-bold text-primary ${
                 productDetails?.salePrice > 0 ? "line-through" : ""
               }`}
             >
               Rp{new Intl.NumberFormat("id-ID").format(productDetails?.price || 0)}
             </p>
             {productDetails?.salePrice > 0 ? (
-              <p className="text-2xl font-bold text-muted-foreground">
+              <p className="text-xl lg:text-2xl font-bold text-muted-foreground">
                 Rp{new Intl.NumberFormat("id-ID").format(productDetails?.salePrice || 0)}
               </p>
             ) : null}
@@ -175,8 +176,8 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
             )}
           </div>
           <Separator />
-          <div className="max-h-[300px] overflow-auto">
-            <h2 className="text-xl font-bold mb-4">Reviews</h2>
+          <div>
+            <h2 className="text-lg lg:text-xl font-bold mb-4">Reviews</h2>
             <div className="grid gap-6">
               {reviews && reviews.length > 0 ? (
                 reviews.map((reviewItem, index) => (
@@ -203,7 +204,7 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
                 <h1>Tidak ada Review</h1>
               )}
             </div>
-            <div className="mt-10 flex-col flex gap-2">
+            <div className="mt-6 flex flex-col gap-2">
               <Label>Review dari kamu</Label>
               <div className="flex gap-1">
                 <StarRatingComponent
@@ -216,10 +217,12 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
                 value={reviewMsg}
                 onChange={(event) => setReviewMsg(event.target.value)}
                 placeholder="Ketikkan review kamu di sini"
+                className="mt-2"
               />
               <Button
                 onClick={handleAddReview}
                 disabled={reviewMsg.trim() === ""}
+                className="mt-2"
               >
                 Kirim Review
               </Button>

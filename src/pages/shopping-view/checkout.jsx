@@ -110,6 +110,7 @@ function ShoppingCheckout() {
     setTimeout(() => {
       setShowPopup(false);
       toast({
+        classname: "w-full py-2 px-4 bg-zinc-100 text-sky-400 rounded-lg hover:bg-sky-800 font-bold",
         title: "Data telah di kirim ke admin untuk di proses.",
         variant: "success",
       });
@@ -167,7 +168,7 @@ function ShoppingCheckout() {
         </div>
       )}
       {showPopup && (
-        <div className="popup">
+        <div className="popup w-full py-2 px-4 bg-zinc-100 text-sky-400 rounded-lg hover:bg-sky-800 font-bold">
           <p>Data dikirim ke admin untuk diproses. Anda akan kembali ke menu utama.</p>
         </div>
       )}
