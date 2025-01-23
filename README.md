@@ -51,19 +51,19 @@ Backend sudah harus di jalankan agar dapat menggunakan website dengan maksimal!
 Kelompok Rafli website
 
 Link website:
-> server 1
+- > server 1
  https://tugas.danafxc.my.id
-> server 2
+- > server 2
 https://www.aquafxca.my.id
 
-Link repository FE: https://github.com/DanaPutra133/GUNADARMA-E-comm-FE
-Link repository BE: https://github.com/DanaPutra133/GUNADARMA-E-comm-BE
+- Link repository FE: https://github.com/DanaPutra133/GUNADARMA-E-comm-FE
+- Link repository BE: https://github.com/DanaPutra133/GUNADARMA-E-comm-BE
 
-Link spreadsheet: https://docs.google.com/spreadsheets/d/1cdm2tzX15Klu1PgE5-_UDyZsDfQrJ6FWbjfKydSPJiM/edit?usp=sharing
+- Link spreadsheet: https://docs.google.com/spreadsheets/d/1cdm2tzX15Klu1PgE5-_UDyZsDfQrJ6FWbjfKydSPJiM/edit?usp=sharing
 
-Link Figma: https://www.figma.com/design/IwRY2OLD5cLqQhs4DrPvQ2/Untitled?node-id=1-9&t=S2tPWnXvhwTDSEuO-1 
+- Link Figma: https://www.figma.com/design/IwRY2OLD5cLqQhs4DrPvQ2/Untitled?node-id=1-9&t=S2tPWnXvhwTDSEuO-1 
 
-draw io (topolosi, flowchart, dll): https://drive.google.com/file/d/1kHdEBYwfzz1ZnQo3l3aZ8h3jhcqynyLc/view?usp=sharing
+- draw io (topolosi, flowchart, dll): https://drive.google.com/file/d/1kHdEBYwfzz1ZnQo3l3aZ8h3jhcqynyLc/view?usp=sharing
 > buka dengan draw.io ada di atas
 > desktop only or you already linked account to draw io :D
 
